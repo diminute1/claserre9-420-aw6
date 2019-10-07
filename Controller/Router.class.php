@@ -1,5 +1,6 @@
 <?php
 require_once './Controller/AccueilController.class.php';
+require_once './Controller/ErrorController.class.php';
 class Routeur
 {
     public static function getAction($nomAction)

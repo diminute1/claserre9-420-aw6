@@ -1,8 +1,8 @@
 <?php
-require_once('./Controleur/Action.interface.php');
-require_once('./View/Page.class.php');
+require_once('./Controller/Action.interface.php');
+require_once('./View/page.class.php');
 
-class ErreurControleur implements IAction
+class ErrorController implements IAction
 {
 	public function execute()
 	{
