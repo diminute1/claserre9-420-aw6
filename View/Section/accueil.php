@@ -1,1 +1,1 @@
-Ceci est la page d'accueil
+Bonjour, Ceci est la page d'accueil

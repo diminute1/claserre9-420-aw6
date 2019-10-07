@@ -2,16 +2,11 @@
 <html>
 
 <head>
-
+    <title><?=$titre;?></title>
 </head>
 
 <body>
-
-<?php
-
-echo $contenu;
-
-?>
+<?php echo $contenu;?>
 </body>
 
 </html>
