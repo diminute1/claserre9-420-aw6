@@ -1,5 +1,5 @@
 <?php
-require_once './DAO/config.php'; 
+require_once './Model/DAO/config.php'; 
 
 class Connection implements IDAO
 {

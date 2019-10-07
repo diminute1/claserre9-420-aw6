@@ -1,5 +1,5 @@
 <?php
-require_once './DAO/connexion.php'; 
+require_once './Model/DAO/connexion.php'; 
 ?>
 
 <!DOCTYPE html>
