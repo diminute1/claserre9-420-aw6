@@ -1,6 +1,5 @@
 <?php
-require_once './Model/DAO/connexion.php'; 
-?>
+require_once './Controller/Router.class.php'; 
 
 $action = null;
 $vue = null;
