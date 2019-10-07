@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once './Controller/Routeur.class.php';
+require_once './Controller/Router.class.php';
 
 $action = null;
 $vue = null;
@@ -14,8 +14,5 @@ if (isset($_REQUEST["action"])) {
     $vue = $action->execute();
 }
 
-if ($action instanceof RequirePRGAction) {
-    header("Location : ?action=" . $vue);
-} else {
-    echo $vue->genererContenu();
-}
+echo $vue->genererContenu();
+
