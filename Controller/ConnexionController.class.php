@@ -15,8 +15,10 @@ class ConnexionController implements IAction {
         }
         if (isset($_POST["da"]) && isset($_POST["mdp"])) {
             $etu = EtudiantDAO::find($_POST['da']);
-            if ($etu != null && $etu->getMdp() == $_POST['mdp']) {
+            if ($etu != null && password_hash($_POST['mdp'], PASSWORD_DEFAULT) == $etu->getMdp()) {
                 $_SESSION['connected'] = $etu->getId();
+            }else{
+                
             }
         }
         return new Page('connected', "Accueil", null, null);

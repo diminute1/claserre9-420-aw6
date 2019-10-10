@@ -11,6 +11,7 @@
 
     <body>
         <?php
+        
         require_once './Modele/EtudiantDAO.php';
         $user = EtudiantDAO::find($_SESSION['connected']);
         ?>
