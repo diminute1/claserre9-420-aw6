@@ -18,7 +18,7 @@ class ConnexionController implements IAction {
             if ($etu != null && password_hash($_POST['mdp'], PASSWORD_DEFAULT) == $etu->getMdp()) {
                 $_SESSION['connected'] = $etu->getId();
             }else{
-                
+                return new Page('accueil', "Accueil", null, null);
             }
         }
         return new Page('connected', "Accueil", null, null);
