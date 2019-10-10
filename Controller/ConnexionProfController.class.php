@@ -6,6 +6,6 @@ class ConnexionProfController implements IAction
 {
 	public function execute()
 	{
-		return new Page('accueil', "Accueil", null, null);
+        
 	}
 }
