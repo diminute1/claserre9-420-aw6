@@ -18,9 +18,11 @@ class EtudiantDAO {
 
     //put your code here
     public static function Create($x) {
+        $mdpHash = $x->getMdp();
+        $hash = password_hash($mdpHash, PASSWORD_DEFAULT);
         $request = "INSERT INTO etudiant (id_etu,nom,prenom,mdp,note,id_groupe) VALUES (" . $x->getId() . 
                 ",'" . $x->getNom() . "','" . $x->getPrenom() . 
-                "','" . $x->getMdp() . "'," .$x->getNote().",'".$x->getIdGroupe(). "');";
+                "','" . $hash . "'," .$x->getNote().",'".$x->getIdGroupe(). "');";
         try {
             $cnx = Connection::getInstance();
             return $cnx->exec($request);

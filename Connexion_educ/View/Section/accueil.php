@@ -15,35 +15,35 @@ and open the template in the editor.
 
     </head>
     <body id='bodylogin'>
-       
-        
-        
 
-        
-            <form method="post" action="?action=connexion" id='form-signin' class="form">
-                <h1>Connexion</h1>
-                <hr/>
-                Numero DA<br/><input class="form-control" name="da" required=""><hr/>
-                Mot de passe<br/><input class="form-control" name="mdp" type="password" required=""><br/>
-                <button  class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
-                <hr/>
-            </form>
-            <?php
-            /*
-            require_once './Modele/Etudiant.php';
-            require_once './Modele/EtudiantDAO.php';
-                $etu = new Etudiant(1234569,"lala","lolo","123","hhh");
-                EtudiantDAO::Create($etu);
-                $liste = EtudiantDAO::findAll();
-                $x = EtudiantDAO::find($etu->getId());
-                foreach ($liste as $value) {
-                    echo $value;
-                }
-                echo 'x:'.$x;*/
-            ?>
-            
-            
-        
+
+
+
+
+        <form method="post" action="?action=connexion" id='form-signin' class="form">
+            <h1>Connexion</h1>
+            <hr/>
+            Numero DA<br/><input class="form-control" name="da" required=""><hr/>
+            Mot de passe<br/><input class="form-control" name="mdp" type="password" required=""><br/>
+            <button  class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
+            <hr/>
+        </form>
+        <?php
+        require_once './Modele/Etudiant.php';
+        require_once './Modele/EtudiantDAO.php';
+        $etu = new Etudiant(1122334, "test", "teur", "123", "hhh");
+        EtudiantDAO::Create($etu);
+        echo $etu;
+        /*       $liste = EtudiantDAO::findAll();
+          $x = EtudiantDAO::find($etu->getId());
+          foreach ($liste as $value) {
+          echo $value;
+          }
+          echo 'x:'.$x; */
+        ?>
+
+
+
 
     </body>
 
