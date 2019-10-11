@@ -27,6 +27,12 @@ class Groupe{
      function set_nom_groupe($_nom_groupe) {
          $this->_nom_groupe = $_nom_groupe;
      }
+     function set_session($_nom_session) {
+         $this->_session = $_session;
+     }
+     function set_id_groupe($_nom_groupe) {
+         $this->_id_groupe = $_id_groupe;
+     }
 
      public function loadFromArray($t){
 
@@ -37,7 +43,7 @@ class Groupe{
 
     
      public function __toString() {
-        return "Groupe[".$this->_id_groupe.",".$this->_session.",".$this->_nom_groupe"]";
+        return "Groupe :[".$this->_id_groupe.",".$this->_session.",".$this->_nom_groupe."]";
     }
 
 

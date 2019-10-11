@@ -1,5 +1,5 @@
 <?php
-include_once('./Model/class/Database.class.php'); 
+require_once 'connexion.php';
 include_once('./Model/class/Groupe.php'); 
 
 class GroupeDAO 
@@ -7,22 +7,13 @@ class GroupeDAO
     
     
     public static function createGroupe($groupe){
-        $db = Database::getInstance();
-        try {
-            $pstmt = $db->prepare("INSERT INTO groupe (ID, NOM, SESSION)".
-                                              " VALUES (:c,:n,:s)");
-            $pstmt->execute(array(':c' => $groupe->get_id_groupe(),
-                                  ':n' => $groupe->get_nom_groupe(),
-                                  ':s' => $groupe->get_session(),
-                               
-            
-            $pstmt->closeCursor();
-            $pstmt = NULL;
           
-        }
-        catch (Exception $ex) {
+        $request = "INSERT INTO groupe (ID, NOM, SESSION) VALUES (" . $groupe->get_id_groupe() . ",'" . $groupe->get_nom_groupe() . "','" . $groupe->get_session() . "');";
+        try {
+            $cnx = Connection::getInstance();
+            return $cnx->exec($request);
+        } catch (Exception $ex) {
             throw $ex;
-
         }
     }
 
@@ -48,7 +39,6 @@ class GroupeDAO
             return $liste;
         }
     }
-
 
 
     public static function findGroupe($groupe){
@@ -102,4 +92,4 @@ class GroupeDAO
 
   
     }
-}
+
