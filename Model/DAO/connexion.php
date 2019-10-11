@@ -24,7 +24,6 @@ class Connection implements IDAO
                 IDAO::password
             );
         }
-        echo "connexion etablie";
         return self::$instance;
         
     }
