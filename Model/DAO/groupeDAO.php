@@ -8,7 +8,7 @@ class GroupeDAO
     
     public static function createGroupe($groupe){
           
-        $request = "INSERT INTO groupe (ID, NOM, SESSION) VALUES (" . $groupe->get_id_groupe() . ",'" . $groupe->get_nom_groupe() . "','" . $groupe->get_session() . "');";
+        $request = "INSERT INTO groupe (NOM_GROUPE, SESSION) VALUES ('" . $groupe->get_nom_groupe() . "','" . $groupe->get_session() . "');";
         try {
             $cnx = Connection::getInstance();
             return $cnx->exec($request);
@@ -65,25 +65,14 @@ class GroupeDAO
         }             
         return NULL;
     }
-     public function update($x){
-        $request = "UPDATE groupe SET NOM= '".$x->get_nom_groupe()."',
-                    SESSION = '".$x->get_session()."'".
-                    "WHERE ID = ".$x->get_id_groupe();
-        try{
-            $cnx = Connection::getInstance();
-            return $cnx->exec($request);
-            
-        } catch (Exception $ex) {
-            throw $ex;
-        }
-    }
+
     
 
-    public function delete($x) {
-        $request = "DELETE FROM groupe WHERE ID = '" . $x->get_id_groupe() . "'";
+    public function deleteGroupe($x) {
+        $request = "DELETE FROM `groupe` WHERE `groupe`.`id_groupe`=" . $x;
         try {
             $cnx = Connection::getInstance();
-            return $cnx->exerc($request);
+            return $cnx->exec($request);
         } catch (Exception $ex) {
             throw $ex;
         }

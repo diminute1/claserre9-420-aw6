@@ -6,6 +6,6 @@ class AccueilController implements IAction
 {
 	public function execute()
 	{
-		return new Page('accueil', "Accueil", null, null);
+		return new Page('groupe', "Accueil", null, null);
 	}
 }

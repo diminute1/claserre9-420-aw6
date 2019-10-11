@@ -28,7 +28,7 @@ class Groupe{
          $this->_nom_groupe = $_nom_groupe;
      }
      function set_session($_nom_session) {
-         $this->_session = $_session;
+         $this->_session = $_nom_session;
      }
      function set_id_groupe($_nom_groupe) {
          $this->_id_groupe = $_id_groupe;
@@ -36,9 +36,9 @@ class Groupe{
 
      public function loadFromArray($t){
 
-        $this->_id_groupe = $t['ID'];
-        $this->_session  = $t['SESSION'];
-        $this->_nom_groupe = $t['NOM'];
+        $this->_id_groupe = $t['id_groupe'];
+        $this->_session  = $t['session'];
+        $this->_nom_groupe = $t['nom_groupe'];
      }
 
     
