@@ -2,7 +2,7 @@
 
 require_once('./Controller/Action.interface.php');
 require_once('./View/page.class.php');
-require_once './Modele/EtudiantDAO.php';
+require_once './Modele/DAO/EtudiantDAO.php';
 
 class ConnexionController implements IAction {
 
@@ -15,9 +15,12 @@ class ConnexionController implements IAction {
         }
         if (isset($_POST["da"]) && isset($_POST["mdp"])) {
             $etu = EtudiantDAO::find($_POST['da']);
-            if ($etu != null && password_hash($_POST['mdp'], PASSWORD_DEFAULT) == $etu->getMdp()) {
+            if(password_verify($_POST['mdp'],$etu->getMdp())){
+            echo '<script>alert("valide")</script>';
+            }
+            if ($etu != null && password_verify($_POST['mdp'],$etu->getMdp())) {
                 $_SESSION['connected'] = $etu->getId();
-            }else{
+            } else {
                 return new Page('accueil', "Accueil", null, null);
             }
         }

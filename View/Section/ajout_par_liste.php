@@ -9,17 +9,3 @@
     </form>
 </div>
 
-<style>
-    #bodylogin{
-        text-align: center !important;
-        align-items: center;
-        height: 100%;
-    }
-
-    #form-signin{
-        max-width: 330px;
-        padding: 15px;
-        margin: auto;
-    }
-
-</style>

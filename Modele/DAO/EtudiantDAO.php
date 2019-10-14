@@ -11,8 +11,8 @@
  *
  * @author User
  */
-require_once './DAO/connexion.php';
-require_once 'Etudiant.php';
+require_once './Modele/DAO/connexion.php';
+require_once './Modele/Etudiant.php';
 
 class EtudiantDAO {
 
