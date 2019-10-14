@@ -1,6 +1,6 @@
 <?php
-require_once './Model/DAO/connexion.php';
-require_once './Model/Professeur.php';
+require_once __DIR__.'/connexion.php';
+require_once dirname(__DIR__)."\Class\Professeur.php";
 
 class ProfesseurDAO {
 

@@ -2,10 +2,10 @@
 require_once('./Controller/Action.interface.php');
 require_once('./View/page.class.php');
 
-class InscrireController implements IAction
+class PortailprofController implements IAction
 {
 	public function execute()
 	{
-		return new Page("connexionProf", "Connexion du professeur", null, null);
+		return new Page("portailprof", "Portail du professeur", null, null);
 	}
 }

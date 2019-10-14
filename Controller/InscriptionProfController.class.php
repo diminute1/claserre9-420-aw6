@@ -1,9 +1,9 @@
 <?php
 require_once('./Controller/Action.interface.php');
 require_once('./View/page.class.php');
-require_once('./Model/ProfesseurDAO.class.php');
+require_once('./Model/DAO/ProfesseurDAO.class.php');
 
-class ConnexionprofController implements IAction
+class InscriptionprofController implements IAction
 {
 	public function execute()
 	{
