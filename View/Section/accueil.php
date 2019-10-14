@@ -28,19 +28,7 @@ and open the template in the editor.
             <button  class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
             <hr/>
         </form>
-        <?php
-        require_once './Modele/Etudiant.php';
-        require_once './Modele/EtudiantDAO.php';
-        $etu = new Etudiant(1122334, "test", "teur", "123", "hhh");
-        EtudiantDAO::Create($etu);
-        echo $etu;
-        /*       $liste = EtudiantDAO::findAll();
-          $x = EtudiantDAO::find($etu->getId());
-          foreach ($liste as $value) {
-          echo $value;
-          }
-          echo 'x:'.$x; */
-        ?>
+        
 
 
 
