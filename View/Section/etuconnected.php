@@ -1,6 +1,6 @@
     <?php
       
-        require_once './Modele/DAO/EtudiantDAO.php';
+        require_once './Model/DAO/EtudiantDAO.php';
         $user = EtudiantDAO::find($_SESSION['connected']);
         ?>
         Connected as <?= $user ?>

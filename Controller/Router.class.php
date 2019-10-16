@@ -7,6 +7,7 @@ require_once './Controller/PortailetuController.class.php';
 require_once './Controller/ConnexionetuController.class.php';
 require_once './Controller/ConnexionprofController.class.php';
 require_once './Controller/NewlistController.class.php';
+require_once './Controller/DeconnexionController.class.php';
 class Routeur
 {
     public static function getAction($nomAction)
