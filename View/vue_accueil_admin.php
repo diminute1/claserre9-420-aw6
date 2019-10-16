@@ -17,14 +17,23 @@
 </head>
 <body>
 	<ul>
-	  <li><a>Tous les jours.</a></li>
+	  <li><a>Département d'éducation physique</a></li>
 	  <li style="float:right"><a href="#about">Mon compte <i class="fas fa-user"></i></a></li>
 	</ul>
 	<div class="container-fluid" id="ctn_acc_admin">
-		<h1>Vos groupes :</h1>
+		<h2>Sélectionnez une session :</h2>
 		<hr/>
 		<select>
-			<option value=""></option>
+			<option value="">Automne 2019</option>
+			<option value="">Hiver 2019</option>
+			<option value="">Automne 2018</option>
+		</select>
+		<hr/>
+		<h2>Sélectionnez un groupe :</h2>
+		<select>
+			<option value="">Groupe 1</option>
+			<option value="">Groupe Mardi</option>
+			<option value="">Groupe Cincinnati</option>
 		</select>
 	</div>
 </body>

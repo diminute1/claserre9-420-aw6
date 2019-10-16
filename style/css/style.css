@@ -1,4 +1,10 @@
-#form-signin{
+#head-signin{
+	max-width: 45%;
+	padding: 15px;
+	margin: auto;
+	text-align: center;
+}
+#form-signinn{
 	max-width: 330px;
 	padding: 15px;
 	margin: auto;
@@ -21,7 +27,7 @@
 }
 
 #btn_connect {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50; /* vert */
   border: none;
   color: white;
   padding: 15px 32px;

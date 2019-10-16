@@ -16,13 +16,16 @@
 </head>
 <body>
 	<img src="../style/images/rosemont.jpg" style="height:200px; display: block; margin:auto; margin-top: 5%;">
-	<form id="form-signin">
-		<h1>Connexion</h1>
+	<form id="head-signin">
+		<h1>Département d'éducation physique</h1>
+		<h2>Connexion</h2>
 		<hr/>
-		<input type="text" id="utilisateur" class="form-control" placeholder="Numéro de DA" required autofocus>
-		<input type="password" id="password" class="form-control" placeholder="Mot de passe" required autofocus>
-		<hr/>
-		<button id="btn_connect" type="submit" >Se connecter</button>
+		<div id="form-signinn">
+			<input type="text" id="utilisateur" class="form-control" placeholder="Numéro DA" required autofocus>
+			<input type="password" id="password" class="form-control" placeholder="Mot de passe" required autofocus>
+			<hr/>
+			<button id="btn_connect" type="submit" >Se connecter</button>
+		</div>
 	</form>
 </div>
 
