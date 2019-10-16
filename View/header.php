@@ -16,26 +16,12 @@
   <script src="https://kit.fontawesome.com/0e0877556c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-	<?php
-	include'header.php';	
-	?>
-
-	<div class="container-fluid" id="ctn_acc_admin">
-		<h2>Sélectionnez une session :</h2>
-		<hr/>
-		<select>
-			<option value="">Automne 2019</option>
-			<option value="">Hiver 2019</option>
-			<option value="">Automne 2018</option>
-		</select>
-		<hr/>
-		<h2>Sélectionnez un groupe :</h2>
-		<select>
-			<option value="">Groupe 1</option>
-			<option value="">Groupe Mardi</option>
-			<option value="">Groupe Cincinnati</option>
-		</select>
+	<div class="header">
+		<ul>
+		  <li><a>Département d'éducation physique</a></li>
+		  <li style="float:right"><a href="#about"><?php echo(ISSET ($_SESSION["connected"]))? $_SESSION["connected"]: ("Mon compte") ?> <i class="fas fa-user"></i></a></li>
+		</ul>
 	</div>
 </body>
 </html>
+

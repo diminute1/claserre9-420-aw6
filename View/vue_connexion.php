@@ -15,7 +15,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<img src="../style/images/rosemont.jpg" style="height:200px; display: block; margin:auto; margin-top: 5%;">
+	<img src="../style/images/rosemont.jpg" style="height:200px; display: block; margin:auto; margin-top: 2.5%;">
 	<form id="head-signin">
 		<h1>Département d'éducation physique</h1>
 		<h2>Connexion</h2>
@@ -27,7 +27,5 @@
 			<button id="btn_connect" type="submit" >Se connecter</button>
 		</div>
 	</form>
-</div>
-
 </body>
 </html>
