@@ -2,7 +2,7 @@
 class Etudiant {
     private $id, $mdp, $nom, $prenom, $note, $id_groupe;
     
-    public function __construct($i="",$n="",$p="",$m="",$g=""){
+    public function __construct($i="",$n="",$p="",$m="",$g="NULL"){
         $this->id = $i;
         $this->mdp = $m;
         $this->nom = $n;

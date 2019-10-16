@@ -8,6 +8,8 @@ require_once './Controller/ConnexionetuController.class.php';
 require_once './Controller/ConnexionprofController.class.php';
 require_once './Controller/NewlistController.class.php';
 require_once './Controller/DeconnexionController.class.php';
+require_once './Controller/AjoutergroupeController.class.php';
+require_once './Controller/SupprimergroupeController.class.php';
 class Routeur
 {
     public static function getAction($nomAction)
