@@ -6,7 +6,7 @@ require_once('./View/page.class.php');
 class AccueilController implements IAction {
 
     public function execute() {
-        $accueil='accueil';
+        $accueil='connected';
         if (!isset($_SESSION)) {
             session_start();
         }
