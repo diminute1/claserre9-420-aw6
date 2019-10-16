@@ -3,6 +3,10 @@ require_once './Controller/AccueilController.class.php';
 require_once './Controller/ErrorController.class.php';
 require_once './Controller/PortailprofController.class.php';
 require_once './Controller/InscriptionprofController.class.php';
+require_once './Controller/PortailetuController.class.php';
+require_once './Controller/ConnexionetuController.class.php';
+require_once './Controller/ConnexionprofController.class.php';
+require_once './Controller/NewlistController.class.php';
 class Routeur
 {
     public static function getAction($nomAction)

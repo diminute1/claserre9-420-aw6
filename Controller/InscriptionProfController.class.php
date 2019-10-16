@@ -18,9 +18,9 @@ class InscriptionprofController implements IAction
 				return new Page("connexionProf", "Connexion du professeur", null, null);
 			} else {
 				ProfesseurDAO::ajouter($_REQUEST["nom"], $_REQUEST["prenom"], $_REQUEST["courriel"], $_REQUEST["motdepasse"]);
-				$_REQUEST["messageConnexion"] = "Ce courriel existe déjà dans nos registres";
+				$_REQUEST["messageConnexion"] = "Vous êtes bien connectés";
 				$_REQUEST["theme"] = "success";
-				return new Page("connexionProf", "Connexion du professeur", null, null);
+				return new Page("profilprof", "Connexion du professeur", null, null);
 			}
 		}
 	}

@@ -22,7 +22,7 @@
 
 		</div>
 		<div class="card">
-			<a id="link" href="www.facebook.com">
+			<a id="link" href="?action=portailetu">
 				<img class="card-img-top" src="https://dummyimage.com/600x400/000000/fff" alt="Professeur">
 				<div class="card-body">
 					<h5 class="card-title">Étudiants</h5>

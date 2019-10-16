@@ -1,10 +1,11 @@
 <?php
-require_once __DIR__.'/connexion.php';
-require_once dirname(__DIR__)."\Class\Professeur.php";
+require_once __DIR__ . '/connexion.php';
+require_once dirname(__DIR__) . "\Class\Professeur.php";
 
-class ProfesseurDAO {
+class ProfesseurDAO
+{
 
-public static function ajouter($nom, $prenom, $courriel, $motdepasse)
+    public static function ajouter($nom, $prenom, $courriel, $motdepasse)
     {
         $db = Connection::getInstance();
         $hash = password_hash($motdepasse, PASSWORD_DEFAULT);
@@ -12,7 +13,7 @@ public static function ajouter($nom, $prenom, $courriel, $motdepasse)
         $pstmt->execute(array($courriel, $nom, $prenom, $hash));
     }
 
-public static function verifierCourriel($courriel)
+    public static function verifierCourriel($courriel)
     {
         $db = Connection::getInstance();
 
@@ -26,4 +27,17 @@ public static function verifierCourriel($courriel)
         }
     }
 
+    public static function connecter($courriel)
+    {
+        $cnx = Connection::getInstance();
+        $pstmt = $cnx->prepare("SELECT * FROM professeur WHERE courriel = :x");
+        $pstmt->execute(array(':x' => $courriel));
+
+        $result = $pstmt->fetch(PDO::FETCH_OBJ);
+
+        if ($result) {
+            $prof = new Professeur($result->courriel, $result->nom, $result->prenom, $result->motdepasse);
+            return $prof;
+        }
+    }
 }
