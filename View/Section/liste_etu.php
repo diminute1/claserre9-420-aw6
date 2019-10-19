@@ -1,7 +1,5 @@
 <?php
-$liste=EtudiantDAO::findAll();
-foreach($liste as $etu){
+foreach ($data as $etu) {
     echo $etu;
     echo "<br/>";
 }
-?>

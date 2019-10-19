@@ -9,7 +9,7 @@ class ProfesseurDAO
     {
         $db = Connection::getInstance();
         $hash = password_hash($motdepasse, PASSWORD_DEFAULT);
-        $pstmt = $db->prepare("INSERT INTO professeur VALUES (?, ?, ?, ?)");
+        $pstmt = $db->prepare("INSERT INTO professeur (courriel, nom, prenom, motdepasse) VALUES (?, ?, ?, ?)");
         $pstmt->execute(array($courriel, $nom, $prenom, $hash));
     }
 
@@ -37,6 +37,7 @@ class ProfesseurDAO
 
         if ($result) {
             $prof = new Professeur($result->courriel, $result->nom, $result->prenom, $result->motdepasse);
+            //var_dump($prof);
             return $prof;
         }
     }

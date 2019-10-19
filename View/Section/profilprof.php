@@ -1,6 +1,29 @@
-<p>Je suis connecté</p>
- <button onclick="logout()">Deconnect</button>
+<!--<p>Je suis connecté</p>-->
+<?php //require_once './Model/DAO/groupeDAO.php'; 
+?>
 
+<div class="d-flex flex-row-reverse mx-5">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Creer un groupe d'étudiants
+    </button>
+</div>
+
+<?php
+$i = 0;
+while ($data->next()) {
+    $grp = $data->get($i);
+    if ($grp == null) {
+        echo ('<p>Aucun groupe trouvé</p>');
+    }
+    $p = $data->current();
+    echo $p;
+}
+?>
+
+<br>
+<br>
+<br>
+<button onclick="logout()">Deconnect</button>
 <script>
     function logout() {
         url = window.location.href;
@@ -8,8 +31,12 @@
         window.location.href = new_url + "?action=deconnexion";
     }
 </script>
-<hr/>
-<?php include "liste_etu.php"?>
-<?php include "ajout_par_liste.php"?>
-<hr/>
-<?php include "groupe.php"?>
+
+
+
+<?php //include "liste_etu.php"
+?>
+<?php //include "ajout_par_liste.php"
+?>
+<?php //include "groupe.php"
+?>

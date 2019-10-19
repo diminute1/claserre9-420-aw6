@@ -1,67 +1,68 @@
 <?php
-class Professeur {
+class Professeur
+{
     private $nom, $prenom, $courriel, $motdepasse;
-    
-    public function __construct($nom="",$prenom="",$courriel="",$motdepasse=""){
+
+    public function __construct($courriel = "", $nom = "", $prenom = "", $motdepasse = "")
+    {
+        $this->courriel = $courriel;
         $this->nom = $nom;
         $this->prenom = $prenom;
-        $this->courriel = $courriel;
         $this->motdepasse = $motdepasse;
     }
- 
-    public function getNom() {
+
+    public function getNom()
+    {
         return $this->nom;
-        
-    }
-    
-    public function setNom($param) {
-        $this->nom=$param;
-        
     }
 
-    public function getPrenom() {
-        return $this->nom;
-        
+    public function setNom($param)
+    {
+        $this->nom = $param;
     }
-    
-    public function setPrenom($param) {
-        $this->nom=$param;
-        
+
+    public function getPrenom()
+    {
+        return $this->prenom;
     }
-    
-    public function getMotDePasse() {
+
+    public function setPrenom($param)
+    {
+        $this->prenom = $param;
+    }
+
+    public function getMotDePasse()
+    {
         return $this->motdepasse;
-        
-    }
-    
-    public function setMotDePasse($param) {
-        $this->motdepasse=$param;
-        
     }
 
-    public function getCourriel() {
+    public function setMotDePasse($param)
+    {
+        $this->motdepasse = $param;
+    }
+
+    public function getCourriel()
+    {
         return $this->courriel;
-        
-    }
-    
-    public function setCourriel($param) {
-        $this->courriel=$param;
-        
     }
 
-    
-    public function __toString() {
-        return "Professeur[".$this->nom.",".$this->prenom.",".$this->courriel."]";
+    public function setCourriel($param)
+    {
+        $this->courriel = $param;
     }
 
-    
-    public function loadFromArray($tab){
+
+    public function __toString()
+    {
+        return "Professeur[" . $this->nom . "," . $this->prenom . "," . $this->courriel . "]";
+    }
+
+
+    public function loadFromArray($tab)
+    {
+        $this->courriel = $tab["courriel"];
         $this->nom = $tab["nom"];
-        $this->nom = $tab["prenom"];
-        $this->prenom = $tab["courriel"];
+        $this->prenom = $tab["prenom"];
         $this->mdp = $tab["motdepasse"];
-        
     }
-    
-    
 }

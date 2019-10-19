@@ -1,5 +1,6 @@
 <?php
-require_once './Controller/Router.class.php'; 
+session_start();
+require_once './Controller/Router.class.php';
 
 $action = null;
 $vue = null;
@@ -14,4 +15,3 @@ if (isset($_REQUEST["action"])) {
 }
 
 echo $vue->genererContenu();
-
