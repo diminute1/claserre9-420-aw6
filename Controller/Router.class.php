@@ -12,6 +12,7 @@ require_once './Controller/AjoutergroupeController.class.php';
 require_once './Controller/SupprimergroupeController.class.php';
 require_once './Controller/GroupeController.class.php';
 require_once './Controller/CreergroupeController.class.php';
+require_once './Controller/AfficherGroupeController.class.php';
 class Routeur
 {
     public static function getAction($nomAction)

@@ -1,7 +1,7 @@
  <!--<h2>Groupes</h2>
  <hr />
  <table id=form-signin>
-   <?php
+   <?php/*
     $liste = GroupeDao::findAll();
     foreach ($liste as $value) {
       if ($value->get_id_prof() == $_SESSION['connected']) {
@@ -35,3 +35,4 @@
    <button type="submit" class="btn btn-secondary">Annuler</button>
    <hr />
  </form>
+ -->

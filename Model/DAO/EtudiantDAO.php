@@ -65,6 +65,22 @@ class EtudiantDAO {
             $etu->setNote($result->note);
             return $etu;
         }
+		}
+
+    public static function findByGroupe($id) {
+        $cnx = Connection::getInstance();
+        $pstmt = $cnx->prepare("SELECT * FROM etudiant WHERE id_groupe = :x");
+        $pstmt->execute(array(':x' => $id));
+        
+        $result = $pstmt->fetch(PDO::FETCH_OBJ);
+        
+        if($result){
+            $etu=new Etudiant($result->id_etu,$result->nom,$result->prenom,$result->mdp,$result->id_groupe);
+            $etu->setNote($result->note);
+            return $etu;
+        }
+		}
+
         
         
         
@@ -83,7 +99,7 @@ class EtudiantDAO {
 //            throw $ex;
 //            return null;
 //        }
-    }
+    
     
     public function update($x){
         $request = "UPDATE etudiant SET nom = '".$x->getNom()."', prenom = '".$x->getPrenom().
