@@ -17,7 +17,7 @@ while ($data->next()) {
     }
     $p = $data->current();
     echo
-	'<form method="post" action"?action=afficherGroupe">
+	'<form method="post" action="?action=afficherGroupe">
 	<input type="hidden" name="id_groupe" value="'.$p->get_id_groupe().'"/>
 	<button type="submit">'.$p->get_nom_groupe().'</button>
 	</form>';
