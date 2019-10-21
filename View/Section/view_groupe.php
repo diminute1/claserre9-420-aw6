@@ -1,4 +1,5 @@
 <br>
+<a href="?action=groupe" class="btn btn-primary">Retour<a/>
 <br>
 <br>
 <button onclick="logout()">Deconnect</button>

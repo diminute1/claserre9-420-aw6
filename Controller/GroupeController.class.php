@@ -6,6 +6,7 @@ class GroupeController implements IAction
 {
     public function execute()
     {
-        return new Page('accueil', "Accueil", null, null);
+		$data = GroupeDAO::find($_SESSION['connected']);
+        return new Page('profilprof', "Accueil", $data, null);
     }
 }

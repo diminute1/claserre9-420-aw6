@@ -68,16 +68,24 @@ class EtudiantDAO {
 		}
 
     public static function findByGroupe($id) {
-        $cnx = Connection::getInstance();
-        $pstmt = $cnx->prepare("SELECT * FROM etudiant WHERE id_groupe = :x");
-        $pstmt->execute(array(':x' => $id));
-        
-        $result = $pstmt->fetch(PDO::FETCH_OBJ);
-        
-        if($result){
-            $etu=new Etudiant($result->id_etu,$result->nom,$result->prenom,$result->mdp,$result->id_groupe);
-            $etu->setNote($result->note);
-            return $etu;
+        try {
+            $liste = array();
+
+            $requete = 'SELECT * FROM etudiant WHERE id_groupe='.$id;
+            $cnx = Connection::getInstance();
+
+            $res = $cnx->query($requete);
+            foreach ($res as $row) {
+                $e = new Etudiant();
+                $e->loadFromArray($row);
+                array_push($liste, $e);
+            }
+            $res->closeCursor();
+            $cnx = null;
+            return $liste;
+        } catch (Exception $ex) {
+            print "Error : " . $ex->getMessage() . "<br/>";
+            return $liste;
         }
 		}
 
