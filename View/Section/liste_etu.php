@@ -1,5 +1,7 @@
+<br />
+
 <?php
-
-?>
-
-allo
+foreach ($data as $etu) {
+    echo $etu;
+    echo "<br/>";
+}

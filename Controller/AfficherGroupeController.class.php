@@ -1,0 +1,13 @@
+<?php
+require_once('./Controller/Action.interface.php');
+require_once('./View/page.class.php');
+
+class AfficherGroupeController implements IAction
+{
+	public function execute()
+	{
+		$groupe=$_REQUEST['id_groupe'];
+		$data=EtudiantDAO::findByGroupe($groupe);
+		return new Page('view_groupe', "Accueil", $data, null);
+	}
+}
