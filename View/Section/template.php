@@ -3,6 +3,7 @@
 
 <head>
     <title><?= $titre; ?></title>
+    <?php include "CDN.php" ?>
 </head>
 
 <body>
