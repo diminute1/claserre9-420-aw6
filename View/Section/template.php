@@ -14,8 +14,6 @@
         </div>
     <?php } ?>
 
-    <?php include 'header.php' ?>
-
     <?php echo $contenu; ?>
 
     <br>

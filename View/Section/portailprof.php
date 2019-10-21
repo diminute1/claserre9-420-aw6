@@ -15,14 +15,17 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<?php
+include"header.php";
+?>
 	<img src="./style/img/rosemont.jpg" style="height:200px; display: block; margin:auto; margin-top: 2.5%;">
 	<form id="head-signin">
 		<h1>Département d'éducation physique</h1>
 		<h2>Connexion</h2>
 		<hr/>
-		<div id="form-signinn">
-			<input type="text" id="utilisateur" class="form-control" placeholder="Compte Admin" required autofocus>
-			<input type="password" id="password" class="form-control" placeholder="Mot de passe" required autofocus>
+		<div id="form-signinn" action="?action=connexionprof" method="post">
+			<input class="form-control" type="email" name="moncourriel" placeholder="Courriel" required>
+			<input class="form-control" type="password" name="monmotdepasse" placeholder="Mot de passe" required>
 			<hr/>
 			<button id="btn_connect" type="submit" >Se connecter</button>
 		</div>
@@ -40,7 +43,6 @@
 
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
-                    <!-- Formulaire d'inscription-->
                     <div class="container w-75 mx-auto my-5 text-center">
                         <form action="?action=inscriptionprof" method="post">
                             <div class="form-group"><input class="border rounded form-control" type="text" name="nom" required="" placeholder="Nom" value="<?php if (isset($_REQUEST["nom"])) echo $_REQUEST["nom"] ?>"></div>
@@ -49,30 +51,6 @@
                             <div class="form-group"><input class="form-control" type="password" name="motdepasse" placeholder="Mot de passe" required=""></div>
                             <div class="form-group"><input class="form-control" type="password" name="c_motdepasse" placeholder="Confirmer le mot de passe" required=""></div>
                             <div class="form-group"><button class="btn btn-success btn-lg" type="submit">S'inscrire</button></div>
-                        </form>
-                    </div>
-                    <!-- Formulaire d'inscription-->
-                </div>
-            </div>
-        </div>
-        <div class="card">
-
-            <div class="card-header bg-primary" id="headingTwo">
-                <a data-toggle="collapse" data-target="#collapseTwo">
-                    <h2 class="mb-0">
-                        <h3 class="text-center text-white">Se connecter</h3>
-                    </h2>
-                </a>
-            </div>
-
-
-            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="container w-50 mx-auto my-5 text-center">
-                        <form action="?action=connexionprof" method="post">
-                            <div class="form-group"><input class="form-control" type="email" name="moncourriel" placeholder="Courriel" required=""></div>
-                            <div class="form-group"><input class="form-control" type="password" name="monmotdepasse" placeholder="Mot de passe" required=""></div>
-                            <div class="form-group"><button class="btn btn-primary btn-lg" type="submit">Se connecter</button></div>
                         </form>
                     </div>
                 </div>
