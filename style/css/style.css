@@ -16,7 +16,14 @@
 	max-width: 50%;
 	padding: 15px;
 	margin: auto;
-	margin-top: 2%;
+	text-align: center;
+	float: center;
+}
+
+#ctn_acc_etud {
+	max-width: 50%;
+	padding: 15px;
+	margin: auto;
 	text-align: center;
 	float: center;
 }
@@ -29,8 +36,7 @@
 }
 
 #btn_connect {
-	background-color: #4CAF50;
-	/* vert */
+	background-color: #4CAF50; /* vert */
 	border: none;
 	color: white;
 	padding: 15px 32px;
@@ -41,23 +47,17 @@
 	border-radius: 8px;
 	width: 100%;
 }
-
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-}
-
-li {
-	float: left;
-	color: green;
-}
-
-li a {
-	display: block;
-	color: green;
+.round_button {
+	border-radius: 50%;
+	background-color: #4CAF50;
 	text-align: center;
-	padding: 8px 10px;
-	float: right;
+	text-decoration: none;
+	display: inline-block;
+	border: solid;
+	border-width: 2px;
+	height: 100px;
+	width: 100px;
+}
+.lbl_rd_button {
+	font-size: 18px;
 }
