@@ -14,7 +14,7 @@
         </div>
     <?php } ?>
 
-    <?php include 'jumbotron.php' ?>
+    <?php include 'header.php' ?>
 
     <?php echo $contenu; ?>
 
