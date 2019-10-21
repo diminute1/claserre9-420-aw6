@@ -29,7 +29,7 @@
         </div>
         <div class="card">
 
-            <div class="card-header bg-danger" id="headingTwo">
+            <div class="card-header bg-primary" id="headingTwo">
                 <a data-toggle="collapse" data-target="#collapseTwo">
                     <h2 class="mb-0">
                         <h3 class="text-center text-white">Se connecter</h3>
@@ -44,7 +44,7 @@
                         <form action="?action=connexionprof" method="post">
                             <div class="form-group"><input class="form-control" type="email" name="moncourriel" placeholder="Courriel" required=""></div>
                             <div class="form-group"><input class="form-control" type="password" name="monmotdepasse" placeholder="Mot de passe" required=""></div>
-                            <div class="form-group"><button class="btn btn-danger btn-lg" type="submit">Se connecter</button></div>
+                            <div class="form-group"><button class="btn btn-primary btn-lg" type="submit">Se connecter</button></div>
                         </form>
                     </div>
                 </div>
