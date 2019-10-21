@@ -12,12 +12,12 @@
   <script src="https://kit.fontawesome.com/0e0877556c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<button id="home_button"><i class="fas fa-user"></i></button>
+<button id="home_button"><i class="fas fa-home"></i></button>
 
 <div class="dropdown">
 	<button onclick="showmenu()" class="dropbtn"><?php echo(ISSET ($_SESSION["connected"]))? $_SESSION["connected"]: ("Mon compte ") ?><i class="fas fa-user"></i></button>
 	<div id="myDropdown" class="dropdown-content">
-		<a href="#">Link 1</a>
+		<a href="#">Modifier compte</a>
 		<a href="#">Déconnexion</a>
 	</div>
 </div> 

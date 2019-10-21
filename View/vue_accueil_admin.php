@@ -18,8 +18,9 @@
 <?php
 include"header.php";
 ?>
-<img src="../style/images/rosemont.jpg" style="height:56.3px; display: block; margin-left: auto; margin-right: auto; top: 0%;">
+<img src="../style/images/rosemont.jpg" style="height:200px; display: block; margin-left: auto; margin-right: auto; top: 0%;">
 <div id="ctn_acc_admin">
+	<h1>Bienvenue <?php echo(ISSET ($_SESSION["connected"]))? $_SESSION["connected"]: ("Professeur") ?></h1>
 	<h2>Sélectionnez une session :</h2>
 	<hr/>
 	<select>
