@@ -4,13 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/Modele/DAO/EtudiantDAO.php</file>
-            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/View/Section/ajout_par_liste.php</file>
-            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/Modele/Etudiant.php</file>
-            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/style/css/style.css</file>
-            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/Controller/NewlistController.class.php</file>
-            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/View/Section/accueil.php</file>
-            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/View/Section/liste_etu.php</file>
-            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/View/Section/template.php</file>
+            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/ajax/add_exo.php</file>
+            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/View/Section/form_etu.php</file>
+            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/Modele/Formulaire.php</file>
+            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/Modele/DAO/FormulaireDAO.php</file>
+            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/Modele/ExerciceTemps.php</file>
+            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/ajax/voir_exo.php</file>
+            <file>file:/D:/UwAmp/UwAmp/www/420-aw6-ro/Modele/DAO/ExoTempDAO.php</file>
         </group>
     </open-files>
 </project-private>
