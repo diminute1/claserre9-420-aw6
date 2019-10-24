@@ -3,5 +3,5 @@
 <?php
 foreach ($data as $etu) {
     echo $etu;
-    echo "<br/>";
+    echo "1";
 }
