@@ -16,7 +16,6 @@ class ConnexionController implements IAction {
         if (isset($_POST["da"]) && isset($_POST["mdp"])) {
             $etu = EtudiantDAO::find($_POST['da']);
             if(password_verify($_POST['mdp'],$etu->getMdp())){
-            echo '<script>alert("valide")</script>';
             }
             if ($etu != null && password_verify($_POST['mdp'],$etu->getMdp())) {
                 $_SESSION['connected'] = $etu->getId();

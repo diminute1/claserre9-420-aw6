@@ -1,38 +1,45 @@
 <script>
     function showExo() {
-        if (str.length == 0) {
-            document.getElementById("txtHint").innerHTML = "";
-            return;
-        } else {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("body_exo").innerHTML = this.responseText;
-                }
-            };
-            xmlhttp.open("GET", "./ajax/voir_exo.php" , true);
-            xmlhttp.send();
-        }
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("body_exo").innerHTML += this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "./voir_exo.php", true);
+        xmlhttp.send();
     }
+
+    
+    function update(id) {
+        var n = document.getElementById('n' + id).value;
+        var d = document.getElementById('d' + id).value;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById(id).innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "./update_exo.php?id=" + id + '&name=' + n + "&duree=" + d, true);
+        xmlhttp.send();
+    }
+
     function addExo() {
-        if (str.length == 0) {
-            document.getElementById("txtHint").innerHTML = "";
-            return;
-        } else {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("body_exo").innerHTML = this.responseText;
-                }
-            };
-            xmlhttp.open("GET", "./ajax/add_exo.php", true);
-            xmlhttp.send();
-        }
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("body_exo").innerHTML += this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "./add_exo.php", true);
+        xmlhttp.send();
     }
-    showExo();
+    window.onload = showExo();
 </script>
 
-<div class="container">
+<div class="container" >
     <form class="form" style="text-align:center" style="margin-left: 20%;margin-right: 20%">
         Nom de l'activité
         <br>
@@ -47,8 +54,7 @@
             <option value=2>varié</option>
         </select>
         <br>
-        <div id="body_exo">
-            
+        <div id="body_exo" >
         </div>
         <hr style="margin-left: 30%;margin-right: 30%">
         <a class="btn btn-primary" onclick="addExo()">ajouter un exercice</a>

@@ -11,12 +11,13 @@
  *
  * @author estes
  */
+require_once './Modele/DAO/connexion.php';
+require_once './Modele/ExerciceTemps.php';
+
 class ExoTempDAO {
     public static function Create($x) {
-        $mdpHash = $x->getMdp();
-        $hash = password_hash($mdpHash, PASSWORD_DEFAULT);
-        $request = "INSERT INTO activite_temps (id_etu,nom,id_form,bom) VALUES (" . $x->getId() . 
-                ",'" . $x->getNom() . "','" . $x->getForm() ."'," .$x->getBpm().");";
+        $request = "INSERT INTO activite_temps (id,nom,id_form,duree) VALUES ('" 
+                . $x->getId() .  "','" . $x->getNom() . "','" . $x->getForm() ."'," .$x->getDuree().");";
         try {
             $cnx = Connection::getInstance();
             return $cnx->exec($request);
@@ -34,7 +35,7 @@ class ExoTempDAO {
 
             $res = $cnx->query($requete);
             foreach ($res as $row) {
-                $e = new Etudiant();
+                $e = new ExerciceTemps();
                 $e->loadFromArray($row);
                 array_push($liste, $e);
             }
@@ -44,6 +45,18 @@ class ExoTempDAO {
         } catch (Exception $ex) {
             print "Error : " . $ex->getMessage() . "<br/>";
             return $liste;
+        }
+    }
+    
+    public static function update($x){
+        $request = "UPDATE activite_temps SET nom = '".$x->getNom()."', duree = ".$x->getDuree().
+                    " WHERE id = '".$x->getId()."'";
+        try{
+            $cnx = Connection::getInstance();
+            return $cnx->exec($request);
+            
+        } catch (Exception $ex) {
+            throw $ex;
         }
     }
 }
