@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" type="text/css" href="../style/css/style.css">
+<link rel="stylesheet" type="text/css" href="../../style/css/style.css">
 <head>
 	<title>Connexion</title>
 	<meta charset="utf-8">
@@ -18,7 +18,7 @@
 <?php
 include"header.php";
 ?>
-	<img src="./style/img/rosemont.jpg" style="height:200px; display: block; margin:auto; margin-top: 2.5%;">
+	<img src="../../style/images/rosemont.jpg" style="height:200px; display: block; margin:auto; margin-top: 2.5%;">
 	<form id="head-signin">
 		<h1>Département d'éducation physique</h1>
 		<h2>Connexion</h2>
