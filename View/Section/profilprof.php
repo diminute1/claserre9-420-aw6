@@ -29,7 +29,7 @@
                                 <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></button>
                             </form>
 
-                            <form class="d-inline-block" method="post" action="?action=effacerGroupe">
+                            <form class="d-inline-block" method="post" action="?action=Supprimergroupe&id=<?=$p->get_id_groupe()?>">
                                 <input type="hidden" name="id_groupe" value="<?= $p->get_id_groupe() ?>" />
                                 <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                             </form>
