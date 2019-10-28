@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" type="text/css" href="../style/css/style.css">
+<link rel="stylesheet" type="text/css" href="../../style/css/style.css">
 <head>
 	<title>Accueil</title>
 	<meta charset="utf-8">
@@ -18,7 +18,7 @@
 <?php
 include"header.php";
 ?>
-<img src="../style/images/rosemont.jpg" style="height:200px; display: block; margin-left: auto; margin-right: auto; top: 0%;">
+<img src="../../style/images/rosemont.jpg" style="height:200px; display: block; margin-left: auto; margin-right: auto; top: 0%;">
 <div id="ctn_acc_admin">
 	<h1>Votre groupe <?php //get parameter group ?></h1>
 	<hr>
@@ -30,7 +30,7 @@ include"header.php";
 	?>
 	<tr>
 		<th>Nom étudiant</th>
-		<th>Numéro Étudiant</th>
+		<th>Numéro étudiant</th>
 	</tr>
 	<tr>
 	<td>Étudiant</td>
