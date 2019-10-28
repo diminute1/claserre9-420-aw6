@@ -8,7 +8,6 @@ $user = EtudiantDAO::find($_SESSION['connected']);
 Connected as <?= $user ?>
 <button onclick="logout()">Deconnect</button>
 <?php
-include_once("./View/Section/ajout_par_liste.php");
 include_once("./View/Section/afficher_projet.php");
 ?>
 
