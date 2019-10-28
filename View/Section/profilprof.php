@@ -8,58 +8,41 @@
     </button>
 </div>
 
-<div class="d-flex justify-content-center">
-    <div class="row">
-        <div class="card-deck">
-            <?php
-            $i = 0;
-            while ($data->next()) {
-                $grp = $data->get($i);
-                if ($grp == null) {
-                    echo ('<p>Aucun groupe trouvé</p>');
-                }
-                $p = $data->current(); ?>
-                <div class="col-md-3">
-                    <div class="card  w-100 mx-0 my-3">
-                        <div class="card-body">
-                            <h4 class="card-title"><?= $p->get_nom_groupe(); ?></h4>
-                            <h6 class="card-subtitle mb-2 text-muted"><?= $p->get_session() . " " . $p->get_annee(); ?></h6>
-                            <form class="d-inline-block" method="post" action="?action=afficherGroupe">
-                                <input type="hidden" name="id_groupe" value="<?= $p->get_id_groupe() ?>" />
-                                <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></button>
-                            </form>
-
-                            <form class="d-inline-block" method="post" action="?action=Supprimergroupe&id=<?= $p->get_id_groupe() ?>">
-                                <input type="hidden" name="id_groupe" value="<?= $p->get_id_groupe() ?>" />
-                                <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
-        </div>
-    </div>
-</div>
-
-
-<br>
-<br>
-<br>
-
 <div class="container">
     <div class="row">
-        <div class="col-sm-3">
-            <div class="card">
-                <img class="card-img-top img-fluid" src="//placehold.it/500x200" alt="Card image cap">
-                <div class="card-block">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <?php
+        $i = 0;
+        while ($data->next()) {
+            $grp = $data->get($i);
+            if ($grp == null) {
+                echo ('<p>Aucun groupe trouvé</p>');
+            }
+            $p = $data->current(); ?>
+            <div class="col-lg-3">
+                <div class="card my-2">
+                    <div class="card-body">
+                        <h4 class="card-title"><?= $p->get_nom_groupe(); ?></h4>
+                        <h6 class="card-subtitle mb-2 text-muted"><?= $p->get_session() . " " . $p->get_annee(); ?></h6>
+                        <form class="d-inline-block" method="post" action="?action=afficherGroupe">
+                            <input type="hidden" name="id_groupe" value="<?= $p->get_id_groupe() ?>" />
+                            <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></button>
+                        </form>
+
+                        <form class="d-inline-block" method="post" action="?action=Supprimergroupe&id=<?= $p->get_id_groupe() ?>">
+                            <input type="hidden" name="id_groupe" value="<?= $p->get_id_groupe() ?>" />
+                            <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        <?php } ?>
     </div>
 </div>
+
+
+<br>
+<br>
+<br>
 
 
 <button onclick="logout()">Se déconnecter</button>
