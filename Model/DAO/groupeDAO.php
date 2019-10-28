@@ -66,9 +66,23 @@ class GroupeDAO
         return null;
     }
 
+    public function update($x){
+        $request = "UPDATE groupe SET id_prof = '".$x->get_id_prof()."', session = '".$x->get_session().
+            "', nom_groupe = '".$x->get_nom_groupe()."', annee = ".$x->get_annee()." ".
+                "WHERE id_groupe = ".$x->get_id_groupe();
+        try{
+            $cnx = Connection::getInstance();
+            return $cnx->exec($request);
+        } catch (Exception $ex){
+            throw $ex;
+        }
+
+    }
+
     public function deleteGroupe($x)
     {
         $request = "DELETE FROM `groupe` WHERE `groupe`.`id_groupe`=" . $x;
+        //$request = "DELETE FROM groupe WHERE id_groupe = '. $x->get_id_groupe(). "'";
         try {
             $cnx = Connection::getInstance();
             return $cnx->exec($request);
@@ -76,4 +90,5 @@ class GroupeDAO
             throw $ex;
         }
     }
+
 }
