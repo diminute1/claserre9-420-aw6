@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="../style/css/style.css">
+
 <head>
 	<title>Connexion</title>
 	<meta charset="utf-8">
@@ -14,18 +15,20 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 	<img src="../style/images/rosemont.jpg" style="height:200px; display: block; margin:auto; margin-top: 2.5%;">
-	<form id="head-signin">
+	<form id="head-signin" method="post" action="?action=connexionetu">
 		<h1>Département d'éducation physique</h1>
 		<h2>Connexion</h2>
-		<hr/>
+		<hr />
 		<div id="form-signinn">
 			<input type="text" name="da" class="form-control" placeholder="Numéro DA" required autofocus>
 			<input type="password" name="mdp" class="form-control" placeholder="Mot de passe" required autofocus>
-			<hr/>
-			<button id="btn_connect" type="submit" >Se connecter</button>
+			<hr />
+			<button id="btn_connect" type="submit">Se connecter</button>
 		</div>
 	</form>
 </body>
+
 </html>
