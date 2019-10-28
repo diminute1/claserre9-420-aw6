@@ -6,7 +6,7 @@ $new = new ExerciceTemps();
 $new->setDuree(0);
 $new->setNom("");
 $new->setId(uniqid());
-$new->setForm("");
+$new->setForm($_REQUEST['form']);
 if (ExoTempDAO::Create($new)) {
     $e = $new;
     echo'<div id="' . $e->getId() . '">';

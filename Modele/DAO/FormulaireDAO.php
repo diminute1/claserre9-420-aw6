@@ -14,6 +14,16 @@
 require_once './Modele/DAO/connexion.php';
 require_once './Modele/Formulaire.php';
 class FormulaireDAO {
+    public static function Create($x) {
+        $request = "INSERT INTO formulaire (id_form,id_etu,sport) VALUES ('" 
+                . $x->getId() .  "','"  .$x->getIdEtu(). "','"  .$x->getSport()."');";
+        try {
+            $cnx = Connection::getInstance();
+            return $cnx->exec($request);
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
 
     public static function find($id) {
         $cnx = Connection::getInstance();
@@ -38,7 +48,29 @@ class FormulaireDAO {
 
             $res = $cnx->query($requete);
             foreach ($res as $row) {
-                $e = new Etudiant();
+                $e = new Formulaire();
+                $e->loadFromArray($row);
+                array_push($liste, $e);
+            }
+            $res->closeCursor();
+            $cnx = null;
+            return $liste;
+        } catch (Exception $ex) {
+            print "Error : " . $ex->getMessage() . "<br/>";
+            return $liste;
+        }
+    }
+    
+    public static function findByEtu($id){
+        try {
+            $liste = array();
+
+            $requete = 'SELECT * FROM formulaire WHERE id_etu='.$id;
+            $cnx = Connection::getInstance();
+
+            $res = $cnx->query($requete);
+            foreach ($res as $row) {
+                $e = new Formulaire();
                 $e->loadFromArray($row);
                 array_push($liste, $e);
             }

@@ -1,8 +1,8 @@
 <?php
 include_once './Modele/Formulaire.php';
 include_once './Modele/DAO/FormulaireDAO.php';
-$id = "dadsae2ew";
-$form = FormulaireDAO::find($id);
+$id = 0;
+$form = $data;
 echo $form;
 ?>
 <script>
@@ -14,7 +14,7 @@ echo $form;
                 document.getElementById("body_exo").innerHTML += this.responseText;
             }
         };
-        xmlhttp.open("GET", "./voir_exo.php", true);
+        xmlhttp.open("GET", "./voir_exo.php?form=<?= $form->getId() ?>", true);
         xmlhttp.send();
     }
     function delete_exo(id) {
@@ -43,42 +43,38 @@ echo $form;
     }
 
     function addExo() {
-
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("body_exo").innerHTML += this.responseText;
             }
         };
-        xmlhttp.open("GET", "./add_exo.php", true);
+        xmlhttp.open("GET", "./add_exo.php?form=<?= $form->getId() ?>", true);
         xmlhttp.send();
     }
 
-    function save(id) {
+    function save() {
         var sport = document.getElementById('sport').value;
         var bpm = document.getElementById('bpm').value;
         var fre = document.getElementById('frequence').value;
         var type = document.getElementById('type').value;
         var xmlhttp = new XMLHttpRequest();
-
-        xmlhttp.open("GET", "./save_changes.php?id=" + id + '&sport=' + sport + "&bpm=" + bpm + "&fre=" + fre + "&type=" + type, true);
+        xmlhttp.open("GET", "./save_changes.php?id=<?= $form->getId() ?>" +  '&sport=' + sport + "&bpm=" + bpm + "&fre=" + fre + "&type=" + type, true);
         xmlhttp.send();
     }
 
 
-    window.onload = showExo();
-
-</script>
-
+    window.onload = showExo();</script>
+<a href="?" class="btn btn-primary">retour</a>
 <div class="container border rounded">
     <form class="form" style="text-align:center" style="margin-left: 20%;margin-right: 20%">
         Nom de l'activité
         <br>
-        <input id="sport" class="formuElement" onchange="save('<?= $form->getId() ?>')" type="text" value="<?= $form->getSport() ?>">
+        <input id="sport" class="formuElement" onchange="save()" type="text" value="<?= $form->getSport() ?>">
         <br>
         Type de l'activité
         <br>
-        <select id="type" onchange="save('<?= $form->getId() ?>')" class="formuElement"  name="type">
+        <select id="type" onchange="save()" class="formuElement"  name="type">
             <option >---</option>
             <option id="continue">continue</option>
             <option id="interval">interval</option>
@@ -99,11 +95,11 @@ echo $form;
         <hr style="margin-left: 20%;margin-right: 20%">
         Fréquence cardiaque
         <br>
-        <input id="bpm" class="formuElement" onchange="save('<?= $form->getId() ?>')" type="number" min="50" placeholder="BPM" >
+        <input id="bpm" class="formuElement" onchange="save()" type="number" min="50" placeholder="BPM" >
         <hr style="margin-left: 20%;margin-right: 20%">
         Nombre de fois pratiqué cette semaine
         <br>
-        <input id="frequence" class="formuElement" onchange="save('<?= $form->getId() ?>')" type="number" min="1" max="7"  style = "width: 3em;">
+        <input id="frequence" class="formuElement" onchange="save()" type="number" min="1" max="7"  style = "width: 3em;">
         <br/>        <hr/>
         <button class="btn btn-primary"type="submit">Remettre</button>
         <br><br><hr>
@@ -113,7 +109,13 @@ echo $form;
 //    document.getElementsByClassName('formuElement').onchange = function () {
 //        save('<?= $form->getId() ?>');
 //    };
-    document.getElementById('<?= $form->getType() ?>').selected = 'selected';
-    document.getElementById('frequence').value= '<?= $form->getFrequence() ?>';
-    document.getElementById('bpm').value= '<?= $form->getBpm() ?>';
+    if ('<?= $form->getBpm() ?>' != '') {
+        document.getElementById('<?= $form->getType() ?>').selected = 'selected';
+    }
+    if ('<?= $form->getBpm() ?>' != '') {
+        document.getElementById('frequence').value = '<?= $form->getFrequence() ?>';
+    }
+    if ('<?= $form->getBpm() ?>' != '') {
+        document.getElementById('bpm').value = '<?= $form->getBpm() ?>';
+    }
 </script>

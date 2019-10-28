@@ -25,6 +25,28 @@ class ExoTempDAO {
             throw $ex;
         }
     }
+    
+    public static function findByProjet($id) {
+        try {
+            $liste = array();
+
+            $requete = 'SELECT * FROM activite_temps WHERE id_form=\''.$id."'";
+            $cnx = Connection::getInstance();
+
+            $res = $cnx->query($requete);
+            foreach ($res as $row) {
+                $e = new ExerciceTemps();
+                $e->loadFromArray($row);
+                array_push($liste, $e);
+            }
+            $res->closeCursor();
+            $cnx = null;
+            return $liste;
+        } catch (Exception $ex) {
+            print "Error : " . $ex->getMessage() . "<br/>";
+            return $liste;
+        }
+    }
 
     public static function findAll() {
         try {
@@ -59,6 +81,8 @@ class ExoTempDAO {
             throw $ex;
         }
     }
+    
+    
     
     public static function delete($x) {
         $request = "DELETE FROM activite_temps WHERE id = '" . $x . "'";
