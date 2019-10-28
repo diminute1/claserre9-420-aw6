@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" type="text/css" href="../style/css/style.css">
+<link rel="stylesheet" type="text/css" href="../../style/css/style.css">
 <head>
 	<title>Accueil</title>
 	<meta charset="utf-8">
@@ -18,7 +18,7 @@
 <?php
 include"header.php";
 ?>
-<img src="../style/images/rosemont.jpg" style="height:200px; display: block; margin-left: auto; margin-right: auto; top: 0%;">
+<img src="../../style/images/rosemont.jpg" style="height:200px; display: block; margin-left: auto; margin-right: auto; top: 0%;">
 <div id="ctn_acc_admin">
 	<h1>Bienvenue <?php echo(ISSET ($_SESSION["connected"]))? $_SESSION["connected"]: ("Professeur") ?></h1>
 	<h2>Sélectionnez une session :</h2>
@@ -35,6 +35,8 @@ include"header.php";
 		<option value="">Groupe Mardi</option>
 		<option value="">Groupe Cincinnati</option>
 	</select>
+	<div/>
+	<button id="btn_connect" type="submit" style="max-width: 300px; margin-top:1%;">Voir ce groupe</button>
 </div>
 
 </body>
