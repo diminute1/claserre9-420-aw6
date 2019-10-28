@@ -19,7 +19,7 @@
                     echo ('<p>Aucun groupe trouvé</p>');
                 }
                 $p = $data->current(); ?>
-                <div class="col-sm-3">
+                <div class="col-md-3">
                     <div class="card  w-100 mx-0 my-3">
                         <div class="card-body">
                             <h4 class="card-title"><?= $p->get_nom_groupe(); ?></h4>
@@ -29,7 +29,7 @@
                                 <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></button>
                             </form>
 
-                            <form class="d-inline-block" method="post" action="?action=Supprimergroupe&id=<?=$p->get_id_groupe()?>">
+                            <form class="d-inline-block" method="post" action="?action=Supprimergroupe&id=<?= $p->get_id_groupe() ?>">
                                 <input type="hidden" name="id_groupe" value="<?= $p->get_id_groupe() ?>" />
                                 <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                             </form>
@@ -45,6 +45,21 @@
 <br>
 <br>
 <br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="//placehold.it/500x200" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title">Card title</h4>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <button onclick="logout()">Se déconnecter</button>
