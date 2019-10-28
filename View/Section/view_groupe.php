@@ -11,6 +11,11 @@
     }
 </script>
 
+<div class="d-flex flex-row-reverse mx-5 my-5">
+    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">
+        Ajouter un étudiant
+    </button>
+</div>
 
 
 <?php include "liste_etu.php";
