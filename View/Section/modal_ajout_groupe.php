@@ -1,5 +1,5 @@
 <!-- The Modal -->
-<div class="modal modal fade" id="myModal">
+<div class="modal modal fade" id="creergroupe">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -54,7 +54,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

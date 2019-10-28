@@ -3,7 +3,7 @@
 ?>
 
 <div class="d-flex flex-row-reverse mx-5 my-5">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#creergroupe">
         Creer un groupe d'étudiants
     </button>
 </div>
@@ -20,6 +20,7 @@
             $p = $data->current(); ?>
             <div class="col-lg-3">
                 <div class="card my-2">
+                    <img src="https://dummyimage.com/600x400/992c99/fff.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h4 class="card-title"><?= $p->get_nom_groupe(); ?></h4>
                         <h6 class="card-subtitle mb-2 text-muted"><?= $p->get_session() . " " . $p->get_annee(); ?></h6>

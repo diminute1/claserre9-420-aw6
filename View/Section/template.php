@@ -21,6 +21,10 @@
     <br>
     <?php include "modal_ajout_groupe.php"
     ?>
+    <?php include "modal_ajout_etudiant.php"
+    ?>
+    <?php include "modal_import_etudiant.php"
+    ?>
     <?php //include 'footer.php' 
     ?>
     <?php include "script.php" ?>
