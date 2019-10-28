@@ -11,18 +11,20 @@
  *
  * @author estes
  */
+require_once './Modele/DAO/connexion.php';
+require_once './Modele/Formulaire.php';
 class FormulaireDAO {
 
     public static function find($id) {
         $cnx = Connection::getInstance();
-        $pstmt = $cnx->prepare("SELECT * FROM formulaire WHERE id= :x");
+        $pstmt = $cnx->prepare("SELECT * FROM formulaire WHERE id_form= :x");
         $pstmt->execute(array(':x' => $id));
 
-        $result = $pstmt->fetch(PDO::FETCH_OBJ);
+        $result = $pstmt->fetch(PDO::FETCH_ASSOC);
 
         if ($result) {
-            $etu = new Etudiant($result->id_etu, $result->nom, $result->prenom, $result->mdp, $result->id_groupe);
-            $etu->setNote($result->note);
+            $etu = new Formulaire();
+            $etu->loadFromArray($result);
             return $etu;
         }
     }
@@ -46,6 +48,20 @@ class FormulaireDAO {
         } catch (Exception $ex) {
             print "Error : " . $ex->getMessage() . "<br/>";
             return $liste;
+        }
+    }
+    
+    public static function update($x){
+        $request = "UPDATE formulaire SET sport = '".$x->getSport()."', type = '".$x->getType().
+                "', bpm = ".$x->getBpm().", note = ".$x->getNote().", frequence = ".$x->getFrequence()."".
+                    " WHERE id_form = '".$x->getId()."'";
+      
+        try{
+            $cnx = Connection::getInstance();
+            return $cnx->exec($request);
+            
+        } catch (Exception $ex) {
+            throw $ex;
         }
     }
 

@@ -59,4 +59,15 @@ class ExoTempDAO {
             throw $ex;
         }
     }
+    
+    public static function delete($x) {
+        $request = "DELETE FROM activite_temps WHERE id = '" . $x . "'";
+        
+        try {
+            $cnx = Connection::getInstance();
+            return $cnx->exec($request);
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
 }

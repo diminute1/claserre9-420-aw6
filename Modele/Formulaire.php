@@ -13,7 +13,7 @@
  */
 class Formulaire {
 
-    private $id, $sport, $id_etu, $bpm, $note, $type;
+    private $id="", $sport="", $id_etu="", $bpm=60, $note=0, $type="",$frequence=0;
 
     public function __construct() {
         
@@ -61,18 +61,25 @@ class Formulaire {
         return $this->type;
     }
     
+    public function setFrequence($param) {
+        $this->frequence = $param;
+    }
+    public function getFrequence() {
+        return $this->frequence;
+    }
+    
     public function __toString() {
         return "Formulaire[".$this->id.",".$this->sport.",".$this->id_etu.",".$this->bpm.",".$this->note.",".$this->type."]";
     }
     
     public function loadFromArray($tab){
-        $this->id = $tab["id_etu"];
-        $this->id_etu = $tab["nom"];
-        $this->sport = $tab["prenom"];
-        $this->bpm = $tab["mdp"];
+        $this->id = $tab["id_form"];
+        $this->id_etu = $tab["id_etu"];
+        $this->sport = $tab["sport"];
+        $this->bpm = $tab["bpm"];
         $this->note = $tab["note"];
-        $this->type = $tab["id_groupe"];
-        
+        $this->type = $tab["type"];
+        $this->frequence =$tab["frequence"];
     }
 
 }
