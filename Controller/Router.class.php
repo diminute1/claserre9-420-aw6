@@ -15,6 +15,8 @@ require_once './Controller/CreergroupeController.class.php';
 require_once './Controller/AfficherGroupeController.class.php';
 require_once './Controller/GetFormulaireController.class.php';
 require_once './Controller/NewFormController.class.php';
+require_once './Controller/NoterFormController.class.php';
+
 class Routeur
 {
     public static function getAction($nomAction)
