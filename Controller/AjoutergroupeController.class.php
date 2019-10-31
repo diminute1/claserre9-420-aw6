@@ -1,10 +1,12 @@
 <?php
 require_once('action.interface.php');
 require_once './Model/DAO/groupeDAO.php';
-class AjoutergroupeController implements IAction {
-	public function execute() {
+class AjoutergroupeController implements IAction
+{
+    public function execute()
+    {
 
-        if(!isset($_SESSION['connected']))
+        if (!isset($_SESSION['connected']))
             session_start();
         $resultat = TRUE;
         if (!isset($_REQUEST['NOM'])) {
@@ -17,17 +19,17 @@ class AjoutergroupeController implements IAction {
         }
 
         if ($resultat) {
-            $n =$_REQUEST['NOM'];
-        $c =$_REQUEST['SESSION'];
-            
+            $n = $_REQUEST['NOM'];
+            $c = $_REQUEST['SESSION'];
+
             $groupe = new Groupe();
             $groupe->set_nom_groupe($n);
             $groupe->set_session($c);
             $groupe->set_id_prof($_SESSION['connected']);
             $dao = new GroupeDAO();
             $dao->createGroupe($groupe);
-            return new Page("profilprof","Résultat",null,null);
+            return new Page("profilprof", "Résultat", null, null);
         }
-        return new Page("accueil","Erreur",null,null);
-}
+        return new Page("accueil", "Erreur", null, null);
+    }
 }

@@ -53,5 +53,4 @@ class NewlistController implements IAction
 
         return new Page("liste_etu", "Groupe", $data, null);
     }
-
 }

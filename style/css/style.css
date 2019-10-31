@@ -36,7 +36,8 @@
 }
 
 #btn_connect {
-	background-color: #4CAF50; /* vert */
+	background-color: #4CAF50;
+	/* vert */
 	border: none;
 	color: white;
 	padding: 15px 32px;
@@ -47,6 +48,7 @@
 	border-radius: 8px;
 	width: 100%;
 }
+
 .round_button {
 	border-radius: 50%;
 	background-color: #4CAF50;
@@ -58,6 +60,7 @@
 	height: 100px;
 	width: 100px;
 }
+
 .lbl_rd_button {
 	font-size: 18px;
 }
