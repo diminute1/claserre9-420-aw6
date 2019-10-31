@@ -74,7 +74,7 @@ class GroupeDAO
             $cnx = Connection::getInstance();
             return $cnx->exec($request);
         } catch (Exception $ex){
-            throw $ex
+            throw $ex;
         }
 
     }
@@ -90,4 +90,5 @@ class GroupeDAO
             throw $ex;
         }
     }
+
 }

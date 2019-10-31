@@ -20,6 +20,11 @@ class Groupe
         return $this->_id_prof;
     }
 
+    function set_id_prof($_id_prof)
+    {
+        $this->_id_prof = $_id_prof;
+    }
+
     function get_session()
     {
         return $this->_session;
@@ -43,7 +48,7 @@ class Groupe
     {
         $this->_session = $_nom_session;
     }
-    function set_id_groupe($_nom_groupe)
+    function set_id_groupe($_id_groupe)
     {
         $this->_id_groupe = $_id_groupe;
     }

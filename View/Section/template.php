@@ -7,6 +7,8 @@
 </head>
 
 <body>
+    <?php include "jumbotron.php"
+    ?>
     <?php if (isset($_REQUEST["messageConnexion"])) { ?>
         <div class="alert alert-<?php if (isset($_REQUEST["theme"])) echo $_REQUEST["theme"] ?> w-50 my-2 mx-auto" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -20,6 +22,10 @@
     <br>
     <br>
     <?php include "modal_ajout_groupe.php"
+    ?>
+    <?php include "modal_ajout_etudiant.php"
+    ?>
+    <?php include "modal_import_etudiant.php"
     ?>
     <?php //include 'footer.php' 
     ?>
