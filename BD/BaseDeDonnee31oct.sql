@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 28 Octobre 2019 à 14:42
+-- Généré le :  Jeu 31 Octobre 2019 à 21:19
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -56,7 +56,8 @@ INSERT INTO `activite_temps` (`id`, `id_form`, `nom`, `duree`) VALUES
 ('5db26d616723e', 'dadsae2ew', 'Étirement', 15),
 ('5db65925b07ce', 'dadsae2ew', 'Échauffement', 15),
 ('5db6ea9887792', 'kfbkjbjbj', 'badminton', 19),
-('5db6f11871be7', '5db6ef207b84d', 'Échange tranquille', 25);
+('5db6f11871be7', '5db6ef207b84d', 'Échange tranquille', 25),
+('5db704ad218a0', '5db6ef207b84d', 'Match', 9);
 
 -- --------------------------------------------------------
 
@@ -97,17 +98,19 @@ CREATE TABLE `formulaire` (
   `type` varchar(25) DEFAULT NULL,
   `bpm` int(11) DEFAULT NULL,
   `note` float DEFAULT NULL,
-  `frequence` int(1) DEFAULT NULL
+  `frequence` int(1) DEFAULT NULL,
+  `comment` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `formulaire`
 --
 
-INSERT INTO `formulaire` (`id_form`, `id_etu`, `sport`, `type`, `bpm`, `note`, `frequence`) VALUES
-('5db6ef207b84d', 1767504, 'badminton', 'continue', 150, 0, 2),
-('dadsae2ew', 1767504, 'pratique de soccer', 'continue', 102, 0, 2),
-('kfbkjbjbj', 1702089, 'badminton', 'continue', 141, 0, 4);
+INSERT INTO `formulaire` (`id_form`, `id_etu`, `sport`, `type`, `bpm`, `note`, `frequence`, `comment`) VALUES
+('5db6ef207b84d', 1767504, 'badminton', 'varié', 162, 5, 2, 'bien fait'),
+('5dbb45ce1a2f4', 1767504, 'Nouveau', NULL, NULL, NULL, NULL, NULL),
+('dadsae2ew', 1767504, 'pratique de soccer', 'continue', 102, 5, 2, 'parfait'),
+('kfbkjbjbj', 1702089, 'badminton', 'continue', 141, 0, 4, NULL);
 
 -- --------------------------------------------------------
 
@@ -134,8 +137,8 @@ INSERT INTO `groupe` (`nom_groupe`, `id_prof`, `session`, `annee`, `id_groupe`) 
 ('Mardi', 'claserre9@gmail.com', 'Automne', 2019, 4),
 ('Mardi', 'talmag9@gmail.com', 'Automne', 2019, 5),
 ('Mercredi', 'talmag9@gmail.com', 'Été', 2019, 6),
-('test', 'claserre9@gmail.com', 'Automne', 2023, 7),
-('Vendredi', 'talmag9@gmail.com', 'Automne', 2019, 8);
+('Vendredi', 'talmag9@gmail.com', 'Automne', 2019, 8),
+('test', 'claserre9@gmail.com', 'Été', 2020, 9);
 
 -- --------------------------------------------------------
 
@@ -251,7 +254,7 @@ ALTER TABLE `repetition`
 -- AUTO_INCREMENT pour la table `groupe`
 --
 ALTER TABLE `groupe`
-  MODIFY `id_groupe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_groupe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- Contraintes pour les tables exportées
 --

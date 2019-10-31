@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="./style/css/style.css">
-    <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title><?= $titre; ?></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    </head>
 
-    <body>
-        <?php echo $contenu; ?>
-    </body>
+<head>
+    <title><?= $titre; ?></title>
+    <?php include "CDN.php" ?>
+</head>
+
+<body>
+    <?php include "jumbotron.php"
+    ?>
+    <?php if (isset($_REQUEST["messageConnexion"])) { ?>
+        <div class="alert alert-<?php if (isset($_REQUEST["theme"])) echo $_REQUEST["theme"] ?> w-50 my-2 mx-auto" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong><?= $_REQUEST["messageConnexion"] ?></strong>
+        </div>
+    <?php } ?>
+
+    <?php echo $contenu; ?>
+
+    <br>
+    <br>
+    <br>
+    <?php include "modal_ajout_groupe.php"
+    ?>
+    <?php include "modal_ajout_etudiant.php"
+    ?>
+    <?php include "modal_import_etudiant.php"
+    ?>
+    <?php //include 'footer.php' 
+    ?>
+    <?php include "script.php" ?>
+</body>
+
 
 </html>

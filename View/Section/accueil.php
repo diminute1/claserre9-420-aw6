@@ -1,36 +1,34 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>connexion</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--<form id="form-signin">
+	<div id="form-signin">
+		<h1>Connexion</h1>
+		<hr />
+		<input type="text" id="utilisateur" class="form-control" placeholder="Numéro de DA" required autofocus>
+		<input type="password" id="password" class="form-control" placeholder="Mot de passe" required autofocus>
+		<hr />
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Se connecter</button>
+	</div>
+</form>-->
 
-    </head>
-    <body id='bodylogin'>
-       
-        
-        
+<div class="container">
+	<div class="card-deck">
+		<div class="card">
+			<a id="link" href="?action=portailprof">
+				<img class="card-img-top" src="https://dummyimage.com/600x400/000000/fff" alt="Professeur">
+				<div class="card-body">
+					<h5 class="card-title">Professeur</h5>
+					<p class="card-text">Si vous êtes professeur du cours d'education physique et autonomie</p>
+				</div>
+			</a>
 
-        
-            <form method="post" action="?action=connexion" id='form-signin' class="form">
-                <h1>Connexion</h1>
-                <hr/>
-                Numero DA<br/><input class="form-control" name="da" required=""><hr/>
-                Mot de passe<br/><input class="form-control" name="mdp" type="password" required=""><br/>
-                <button  class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
-                <hr/>
-            </form>
-              
-        
-
-    </body>
-
-</html>
+		</div>
+		<div class="card">
+			<a id="link" href="?action=portailetu">
+				<img class="card-img-top" src="https://dummyimage.com/600x400/000000/fff" alt="Professeur">
+				<div class="card-body">
+					<h5 class="card-title">Étudiants</h5>
+					<p class="card-text">Si vous êtes inscrits au cours d'éducation physique et autonomie</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
