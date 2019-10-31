@@ -7,16 +7,11 @@
  */
 
 /**
- * Description of getFormulaire
+ * Description of Envoyer
  *
  * @author estes
  */
-require_once('./Controller/Action.interface.php');
-require_once('./View/page.class.php');
-require_once './Model/DAO/FormulaireDAO.php';
-require_once './Model/Class/Formulaire.php';
-
-class CorrigerFormulaireController implements IAction {
+class EnvoyerCorrectionController implements IAction {
 
     //put your code here
     public function execute() {
@@ -28,7 +23,9 @@ class CorrigerFormulaireController implements IAction {
         if ($f == null) {
             return new Page('profilprof', "Accueil", null, null);
         }
+        $f->setNote($_REQUEST['note']);
+        $f->setCom($_REQUEST['commentaire']);
+        FormulaireDAO::update($f);
         return new Page('correction_formulaire', 'Formulaire', $f, null);
     }
-
 }

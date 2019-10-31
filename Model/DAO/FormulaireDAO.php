@@ -91,7 +91,8 @@ class FormulaireDAO
     public static function update($x)
     {
         $request = "UPDATE formulaire SET sport = '" . $x->getSport() . "', type = '" . $x->getType() .
-            "', bpm = " . $x->getBpm() . ", note = " . $x->getNote() . ", frequence = " . $x->getFrequence() . "" .
+            "', bpm = " . $x->getBpm() . ", note = " . $x->getNote() . ", frequence = " . $x->getFrequence() . ""
+                . ",comment = '" . $x->getCom() . "'" .
             " WHERE id_form = '" . $x->getId() . "'";
 
         try {

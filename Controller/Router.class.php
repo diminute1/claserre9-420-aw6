@@ -17,6 +17,7 @@ require_once './Controller/GetFormulaireController.class.php';
 require_once './Controller/CorrigerFormulaireController.class.php';
 require_once './Controller/NewFormController.class.php';
 require_once './Controller/AfficherActiviteController.class.php';
+require_once './Controller/EnvoyerCorrectionController.class.php';
 class Routeur
 {
     public static function getAction($nomAction)
