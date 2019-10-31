@@ -17,7 +17,8 @@ class SupprimergroupeController implements IAction
 
             $dao = new GroupeDAO();
             $dao->deleteGroupe($n);
-            return new Page("profilprof", "Résultat", null, null);
+            $x = $dao->find($_SESSION['connected']);
+            return new Page("profilprof", "Mon profil", $x, null);
         }
         return new Page("accueil", "Erreur", null, null);
     }
