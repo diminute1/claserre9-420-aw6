@@ -11,8 +11,8 @@
 			<div class="d-flex">
 				<div class="list-group-item w-100"><?= $etu->getId() . " " . $etu->getNom() . " " . $etu->getPrenom(); ?>
 					<div class="btn-group btn-group-sm float-right" role="group">
-						<button type="button" class="btn btn-secondary btn-sm">Profil</button>
-                                                <a href="?action=afficherActivite&id=<?=$etu->getId()?>" class="btn btn-secondary btn-sm">Activités</a>
+						<a type="button" class="btn btn-secondary btn-sm text-white">Profil</a>
+						<a href="?action=afficherActivite&id=<?= $etu->getId() ?>" type="button" class="btn btn-secondary btn-sm text-white">Activités</a>
 					</div>
 				</div>
 			</div>
