@@ -12,7 +12,7 @@
 				<div class="list-group-item w-100"><?= $etu->getId() . " " . $etu->getNom() . " " . $etu->getPrenom(); ?>
 					<div class="btn-group btn-group-sm float-right" role="group">
 						<button type="button" class="btn btn-secondary btn-sm">Profil</button>
-						<button type="button" class="btn btn-secondary btn-sm">Activités</button>
+                                                <a href="?action=afficherActivite&id=<?=$etu->getId()?>" class="btn btn-secondary btn-sm">Activités</a>
 					</div>
 				</div>
 			</div>
