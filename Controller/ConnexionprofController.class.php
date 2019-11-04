@@ -3,6 +3,9 @@
 require_once './Controller/Action.interface.php';
 require_once './View/page.class.php';
 require_once './Model/DAO/ProfesseurDAO.class.php';
+require_once('./Service/GroupeService.php');
+require_once('./Service/ProfService.php');
+
 
 class ConnexionprofController implements IAction
 {
@@ -13,13 +16,13 @@ class ConnexionprofController implements IAction
             if (!isset($_SESSION)) {
                 session_start();
             }
-            $leprof = ProfesseurDAO::connecter($_REQUEST['moncourriel']);
+            $leprof = ProfService::connecter($_REQUEST['moncourriel']);
             if ($leprof != null && password_verify($_REQUEST['monmotdepasse'], $leprof->getMotDePasse())) {
                 $_REQUEST["messageConnexion"] = "Connexion réussie";
                 $_SESSION['connected'] = $leprof->getCourriel();
                 $_REQUEST["theme"] = "success";
                 //$dao = new GroupeDAO();
-                $data = GroupeDAO::find($_SESSION['connected']);
+                $data = GroupeService::trouverParProf($_SESSION['connected']);
             } else {
                 $_REQUEST["messageConnexion"] = "La connexion a échouée";
                 $_REQUEST["theme"] = "danger";
@@ -28,7 +31,7 @@ class ConnexionprofController implements IAction
         }
 
         //$dao = new GroupeDAO();
-        $data = GroupeDAO::find($_SESSION['connected']);
+        $data = GroupeService::trouverParProf($_SESSION['connected']);
         return new Page('profilprof', "Mon profil", $data, null);
     }
 }

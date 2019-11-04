@@ -24,7 +24,7 @@ class GetFormulaireController  implements IAction
         if (!isset($_REQUEST['id'])) {
             return new Page('connected', "Accueil", null, null);;
         }
-        $f = FormulaireDAO::find($_REQUEST['id']);
+        $f = FormulaireService::trouver($_REQUEST['id']);
         if ($f == null) return new Page('connected', "Accueil", null, null);
         return new Page('form_etu', 'Formulaire', $f, null);
     }

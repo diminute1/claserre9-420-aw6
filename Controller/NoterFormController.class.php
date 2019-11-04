@@ -7,7 +7,7 @@
  */
 require_once('./Controller/Action.interface.php');
 require_once('./View/page.class.php');
-require_once './Model/DAO/FormulaireDAO.php';
+require_once './Service/FormulaireService.php';
 require_once './Model/Class/Formulaire.php';
 
 class NoterFormController  implements IAction
@@ -18,7 +18,7 @@ class NoterFormController  implements IAction
         if (!isset($_REQUEST['id'])) {
             return new Page('connected', "Accueil", null, null);;
         }
-        $f = FormulaireDAO::find($_REQUEST['id']);
+        $f = FormulaireService::trouver($_REQUEST['id']);
         if ($f == null) return new Page('connected', "Accueil", null, null);
         return new Page('prof_afficher_form', 'Formulaire', $f, null);
     }

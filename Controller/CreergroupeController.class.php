@@ -1,14 +1,13 @@
 <?php
 require_once('./Controller/Action.interface.php');
 require_once('./View/page.class.php');
-require_once('./Model/DAO/groupeDAO.php');
+require_once('./Service/GroupeService.php');
 
 class CreergroupeController implements IAction
 {
     public function execute()
     {
-        $dao = new GroupeDAO();
-        $data = $dao->find($_SESSION['connected']);
+        $data = GroupeService::trouverParProf($_SESSION['connected']);
 
         if (isset($_REQUEST["nomGroupe"]) && isset($_REQUEST["lasession"]) && isset($_REQUEST["annee"]) && isset($_SESSION['connected'])) {
             $legroupe = new Groupe();
@@ -17,7 +16,7 @@ class CreergroupeController implements IAction
             $legroupe->set_session($_REQUEST["lasession"]);
             $legroupe->set_annee($_REQUEST["annee"]);
 
-            GroupeDAO::createGroupe($legroupe);
+            GroupeService::creer($legroupe);
             $_REQUEST['ajoutgroupe'] = "Le groupe a été bien créé";
 
             return new Page('profilprof', "Profil", $data, null);

@@ -1,6 +1,6 @@
 <?php
 require_once('action.interface.php');
-require_once './Model/DAO/groupeDAO.php';
+require_once('./Service/GroupeService.php');
 class SupprimergroupeController implements IAction
 {
     public function execute()
@@ -15,9 +15,8 @@ class SupprimergroupeController implements IAction
         if ($resultat) {
             $n = $_REQUEST['id'];
 
-            $dao = new GroupeDAO();
-            $dao->deleteGroupe($n);
-            $x = $dao->find($_SESSION['connected']);
+            GroupeService::supprimer($n);
+            $x = GroupeService::trouverParProf($_SESSION['connected']);
             return new Page("profilprof", "Mon profil", $x, null);
         }
         return new Page("accueil", "Erreur", null, null);

@@ -24,7 +24,7 @@ class CorrigerFormulaireController implements IAction {
             return new Page('profilprof', "Accueil", null, null);
             
         }
-        $f = FormulaireDAO::find($_REQUEST['id']);
+        $f = FormulaireService::trouver($_REQUEST['id']);
         if ($f == null) {
             return new Page('profilprof', "Accueil", null, null);
         }

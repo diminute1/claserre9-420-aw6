@@ -13,7 +13,7 @@
  */
 require_once('./Controller/Action.interface.php');
 require_once('./View/page.class.php');
-require_once './Model/DAO/FormulaireDAO.php';
+require_once './Service/FormulaireService.php';
 require_once './Model/Class/Formulaire.php';
 
 class NewFormController implements IAction
@@ -29,8 +29,8 @@ class NewFormController implements IAction
         $new->setIdEtu($_SESSION['connected']);
         $new->setId(uniqid());
         $new->setSport('Nouveau');
-        FormulaireDAO::Create($new);
-        $f = FormulaireDAO::find($new->getId());
+        FormulaireService::creer($new);
+        $f = FormulaireService::trouver($new->getId());
         if ($f == null) return new Page('etuconnected', "Accueil", null, null);
         return new Page('form_etu', 'Formulaire', $f, null);
     }

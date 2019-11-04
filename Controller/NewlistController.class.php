@@ -1,6 +1,6 @@
 <?php
 
-require_once './Model/DAO/EtudiantDAO.php';
+require_once './Service/EtudiantService.php';
 require_once './Model/Class/Etudiant.php';
 
 class NewlistController implements IAction
@@ -43,13 +43,13 @@ class NewlistController implements IAction
                 }
 
                 $etu = new Etudiant($dsatz[$i][0], $dsatz[$i][2], $dsatz[$i][3], $dsatz[$i][4]);
-                EtudiantDAO::Create($etu);
+                EtudiantService::creer($etu);
                 $i++;
             }
         } else {
             return new Page('profilprof', "Accueil", null, null);
         }
-        $data = EtudiantDAO::findAll();
+        $data = EtudiantService::TrouverParGroupe($id);
 
         return new Page("liste_etu", "Groupe", $data, null);
     }
