@@ -27,6 +27,8 @@
     ?>
     <?php include "modal_import_etudiant.php"
     ?>
+	<?php include "modal_modifier_mdp.php"
+    ?>
     <?php //include 'footer.php' 
     ?>
     <?php include "script.php" ?>
