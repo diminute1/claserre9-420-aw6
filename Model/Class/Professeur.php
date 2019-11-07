@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__ . '/../../Exceptions/IllegalArgumentException.class.php');
 class Professeur
 {
     private $nom, $prenom, $courriel, $motdepasse;
@@ -57,12 +58,18 @@ class Professeur
         return "Professeur[" . $this->nom . "," . $this->prenom . "," . $this->courriel . "]";
     }
 
+    public function VerifierEmailPattern($courriel)
+    {
+        if (filter_var($courriel, FILTER_VALIDATE_EMAIL) == false) {
+            throw new IllegalArgumentException("Le format du courriel n'est pas correct !");
+        }
+    }
 
     public function loadFromArray($tab)
     {
         $this->courriel = $tab["courriel"];
         $this->nom = $tab["nom"];
         $this->prenom = $tab["prenom"];
-        $this->mdp = $tab["motdepasse"];
+        $this->motdepasse = $tab["motdepasse"];
     }
 }
