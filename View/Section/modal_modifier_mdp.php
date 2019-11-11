@@ -32,7 +32,7 @@
                             <input type="password" class="form-control" aria-describedby="basic-addon3" name="newmdp_rpt" required>
                         </div>
 						
-                        <div class="form-group text-center mx-auto mt-3"><button class="btn btn-success btn-sm" type="submit" name="action" value="changermdp">Changer le mot de passe</button></div>
+                        <div class="form-group text-center mx-auto mt-3"><button class="btn btn-success btn-sm" type="submit" name="action" value="changerMotdePasse">Changer le mot de passe</button></div>
                     </form>
                 </div>
             </div>
