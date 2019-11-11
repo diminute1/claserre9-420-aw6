@@ -52,10 +52,9 @@ class ProfesseurDAO
             
             return $prof;
         }
-         }	
+    }	
     public static function update($x){
-        $request = "UPDATE professeur SET nom = '".$x->getNom()."', prenom = '".$x->getPrenom().
-                "', motdepasse = '".$x->getMotDePasse()." WHERE courriel = ".$x->getCourriel();
+        $request = "UPDATE professeur SET nom = '".$x->getNom()."', prenom = '".$x->getPrenom()."', motdepasse = '".$x->getMotDePasse()."' WHERE courriel = '".$x->getCourriel()."'";
         try{
             $cnx = Connection::getInstance();
             return $cnx->exec($request);

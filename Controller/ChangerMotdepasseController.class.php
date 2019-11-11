@@ -19,15 +19,13 @@ class ChangerMotdepasseController implements IAction
 				$etu = EtudiantDAO::find($_SESSION['connected']);
 				$etu->setMdp(password_hash($_POST["newmdp"], PASSWORD_DEFAULT));
 				EtudiantDAO::update($etu);
-				$data = EtudiantDAO::find($etu);
-				return new Page('etuconnected', "Profil", $data , null);
+				return new Page('portailetu', "Profil", null, null);
 			}
 			if (ProfesseurDAO::find($_SESSION['connected'])!=null ){
 				$prof = ProfesseurDAO::find($_SESSION['connected']);
 				$prof->setMotDePasse(password_hash($_POST["newmdp"], PASSWORD_DEFAULT));
 				ProfesseurDAO::update($prof);
-				$data = ProfesseurDAO::find($prof);
-				return new Page('profilprof', "Profil", $data, null);
+				return new Page('portailprof', "Profil", null, null);
 			} 
 		}
 		
