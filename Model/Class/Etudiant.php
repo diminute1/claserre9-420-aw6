@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__ . '/../../Exceptions/IllegalArgumentException.class.php');
 class Etudiant
 {
     private $id, $mdp, $nom, $prenom, $note, $id_groupe;
@@ -76,6 +77,12 @@ class Etudiant
         return "Etudiant[" . $this->id . "," . $this->nom . "," . $this->prenom . "," . $this->mdp . $this->note . "," . $this->id_groupe . "]";
     }
 
+    public function VerifierIDPattern($ID)
+    {
+        if (preg_match("/^\d{7}$/", $ID) == false) {
+            throw new IllegalArgumentException("Le format du numéro DA est incorrect!");
+        }
+    }
 
     public function loadFromArray($tab)
     {
