@@ -12,7 +12,7 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <div>
-                    <form id="form-signin" class="form" method="post" action="">
+                    <form id="form-signin" class="form" method="post">
                         <div class="input-group input-group-sm mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Le nom du groupe</span>
@@ -48,14 +48,8 @@
                             </select>
                         </div>
 
-                        <div class="input-group input-group-sm mb-3">
-                            <form>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">Importer une liste d'étudiants</label>
-                                </div>
-                            </form>
-                        </div>
+                        
+                        
                         <div class="form-group text-center mx-auto mt-3"><button class="btn btn-success btn-sm" type="submit" name="action" value="creergroupe">Créer le groupe</button></div>
                     </form>
                 </div>

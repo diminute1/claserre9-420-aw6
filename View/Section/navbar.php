@@ -48,7 +48,8 @@
                             <i class="fas fa-user"></i>&nbsp;&nbsp;<?= $_SESSION['connected'] ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Mon profil</a>
+                            <a class="dropdown-item" href="?action=profil">Profil</a>
+                            <a class="dropdown-item" href="?action=groupe">Mes groupes</a>
                             <a class="dropdown-item" href="?action=deconnexion">Se déconnecter</a>
                         </div>
                     </li>

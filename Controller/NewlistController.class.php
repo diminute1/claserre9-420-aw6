@@ -8,6 +8,7 @@ class NewlistController implements IAction
 
     public function execute()
     {
+
         if (!isset($_SESSION)) {
             session_start();
         }
@@ -43,7 +44,8 @@ class NewlistController implements IAction
                 }
 
                 $etu = new Etudiant($dsatz[$i][0], $dsatz[$i][2], $dsatz[$i][3], $dsatz[$i][4]);
-                EtudiantDAO::Create($etu);
+                
+                EtudiantDAO::AddEtuWithIDgroup($etu,$_REQUEST['id']);
                 $i++;
             }
         } else {
