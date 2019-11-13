@@ -74,11 +74,11 @@ class Groupe
     public function loadFromArray($t)
     {
 
-        $this->_id_groupe = $t['_id_groupe'];
-        $this->_id_prof = $t['_id_prof'];
-        $this->_session  = $t['_session'];
-        $this->_nom_groupe = $t['_nom_groupe'];
-        $this->_annee = $t['_annee'];
+        $this->_id_groupe = $t['id_groupe'];
+        $this->_id_prof = $t['id_prof'];
+        $this->_session  = $t['session'];
+        $this->_nom_groupe = $t['nom_groupe'];
+        $this->_annee = $t['annee'];
     }
 
 

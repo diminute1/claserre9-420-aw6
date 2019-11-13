@@ -14,58 +14,58 @@ final class GroupeTest extends TestCase
     protected function setUp(): void
     {
         $this->grp = new Groupe();
-        $this->record["_id_groupe"] = "1";
-        $this->record["_id_prof"] = "claserre9@gmail.com";
-        $this->record["_session"] = "Hiver";
-        $this->record["_nom_groupe"] = "Mardi";
-        $this->record["_annee"] = "2019";
+        $this->record["id_groupe"] = "1";
+        $this->record["id_prof"] = "claserre9@gmail.com";
+        $this->record["session"] = "Hiver";
+        $this->record["nom_groupe"] = "Mardi";
+        $this->record["annee"] = "2019";
     }
 
     public function testloadFromArray(): void
     {
         $this->grp->loadFromArray($this->record);
-        $this->assertEquals($this->record["_id_groupe"], $this->grp->get_id_groupe());
-        $this->assertEquals($this->record["_id_prof"], $this->grp->get_id_prof());
-        $this->assertEquals($this->record["_session"], $this->grp->get_session());
-        $this->assertEquals($this->record["_nom_groupe"], $this->grp->get_nom_groupe());
-        $this->assertEquals($this->record["_annee"], $this->grp->get_annee());
+        $this->assertEquals($this->record["id_groupe"], $this->grp->get_id_groupe());
+        $this->assertEquals($this->record["id_prof"], $this->grp->get_id_prof());
+        $this->assertEquals($this->record["session"], $this->grp->get_session());
+        $this->assertEquals($this->record["nom_groupe"], $this->grp->get_nom_groupe());
+        $this->assertEquals($this->record["annee"], $this->grp->get_annee());
     }
 
     public function test_set_id_groupe(): void
     {
-        $this->grp->set_id_groupe($this->record["_id_groupe"]);
-        $this->assertEquals($this->record["_id_groupe"], $this->grp->get_id_groupe());
+        $this->grp->set_id_groupe($this->record["id_groupe"]);
+        $this->assertEquals($this->record["id_groupe"], $this->grp->get_id_groupe());
     }
 
     public function test_set_id_prof(): void
     {
-        $this->grp->set_id_prof($this->record["_id_prof"]);
-        $this->assertEquals($this->record["_id_prof"], $this->grp->get_id_prof());
+        $this->grp->set_id_prof($this->record["id_prof"]);
+        $this->assertEquals($this->record["id_prof"], $this->grp->get_id_prof());
     }
 
     public function test_set_session(): void
     {
-        $this->grp->set_session($this->record["_session"]);
-        $this->assertEquals($this->record["_session"], $this->grp->get_session());
+        $this->grp->set_session($this->record["session"]);
+        $this->assertEquals($this->record["session"], $this->grp->get_session());
     }
 
     public function test_set_nom_groupe(): void
     {
-        $this->grp->set_nom_groupe($this->record["_nom_groupe"]);
-        $this->assertEquals($this->record["_nom_groupe"], $this->grp->get_nom_groupe());
+        $this->grp->set_nom_groupe($this->record["nom_groupe"]);
+        $this->assertEquals($this->record["nom_groupe"], $this->grp->get_nom_groupe());
     }
 
     public function test_set_annee(): void
     {
-        $this->grp->set_annee($this->record["_annee"]);
-        $this->assertEquals($this->record["_annee"], $this->grp->get_annee());
+        $this->grp->set_annee($this->record["annee"]);
+        $this->assertEquals($this->record["annee"], $this->grp->get_annee());
     }
 
     public function testIDProfInvalide()
     {
 
         $this->expectException(IllegalArgumentException::class);
-        $this->record["_id_prof"] = "abcd";
-        $this->grp->VerifierIDProfPattern($this->record["_id_prof"]);
+        $this->record["id_prof"] = "abcd";
+        $this->grp->VerifierIDProfPattern($this->record["id_prof"]);
     }
 }

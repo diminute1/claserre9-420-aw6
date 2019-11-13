@@ -6,15 +6,20 @@
     <?php include "CDN.php" ?>
 </head>
 
-<body>
-    <?php include "jumbotron.php"
+
+<body 
+<?=(!isset($_REQUEST['action']) ? "style = 'background-image: url(./style/img/gymrosemont.jpg) ; background-size: cover; background-repeat: no-repeat; background-position: center center; '" : '') ?>
+<?=(isset($_REQUEST['action']) && $_REQUEST['action']=='portailprof' ? "style = 'background-image: url(./style/img/crosemont.jpg) ; background-size: cover; background-repeat: no-repeat; background-position: center center; '" : '') ?>
+<?=(isset($_REQUEST['action']) && $_REQUEST['action']=='deconnexion' ? "style = 'background-image: url(./style/img/gymrosemont.jpg) ; background-size: cover; background-repeat: no-repeat; background-position: center center; '" : '') ?>
+>
+    <?php
+    include "navbar.php";
     ?>
-    <?php if (isset($_REQUEST["messageConnexion"])) { ?>
-        <div class="alert alert-<?php if (isset($_REQUEST["theme"])) echo $_REQUEST["theme"] ?> w-50 my-2 mx-auto" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong><?= $_REQUEST["messageConnexion"] ?></strong>
-        </div>
-    <?php } ?>
+
+
+    <?php include "notification.php"
+    ?>
+
 
     <?php echo $contenu; ?>
 
