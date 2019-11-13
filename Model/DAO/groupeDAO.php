@@ -43,29 +43,6 @@ class GroupeDAO
 
 
 
-    public static function findGroupe($groupe)
-    {
-        $db = Database::getInstance();
-        try {
-            $pstmt = $db->prepare("SELECT * FROM groupe WHERE id_prof = :x"); //requête paramétrée par un paramètre x.
-            $pstmt->execute(array(':x' => $groupe));
-
-            $result = $pstmt->fetch(PDO::FETCH_OBJ);
-
-            if ($result) {
-                $f = new Groupe();
-                $f->loadFromObject($result);
-                $pstmt->closeCursor();
-                $pstmt = null;
-
-                return $f;
-            }
-            $pstmt->closeCursor();
-            $pstmt = null;
-        } catch (PDOException $ex) { }
-        return null;
-    }
-
     public function update($x){
         $request = "UPDATE groupe SET id_prof = '".$x->get_id_prof()."', session = '".$x->get_session().
             "', nom_groupe = '".$x->get_nom_groupe()."', annee = ".$x->get_annee()." ".

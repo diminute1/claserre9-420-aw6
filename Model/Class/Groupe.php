@@ -71,9 +71,8 @@ class Groupe
         }
     }
 
-    public function loadFromArray($t)
+    function loadFromArray($t)
     {
-
         $this->_id_groupe = $t['id_groupe'];
         $this->_id_prof = $t['id_prof'];
         $this->_session  = $t['session'];

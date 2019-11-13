@@ -47,6 +47,15 @@
                                 <option value="2024">2024</option>
                             </select>
                         </div>
+
+                        <div class="input-group input-group-sm mb-3">
+                            <form>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Importer une liste d'étudiants</label>
+                                </div>
+                            </form>
+                        </div>
                         <div class="form-group text-center mx-auto mt-3"><button class="btn btn-success btn-sm" type="submit" name="action" value="creergroupe">Créer le groupe</button></div>
                     </form>
                 </div>

@@ -1,6 +1,4 @@
-
 .loginetudiant {
-    background: #f1f7fc;
     padding: 80px 0
 }
 
@@ -17,17 +15,82 @@
 .loginetudiant form {
     display: table-cell;
     width: 400px;
-    background-color: #fff;
+   
     padding: 40px 60px;
-    color: #505e6c
+   
 }
-
-
 
 .loginetudiant form .form-check {
     font-size: 13px;
     line-height: 20px
 }
 
-
-
+.equipe {
+    color: #313437;
+    /*background-color: #eef4f7;*/
+  }
+  
+  .equipe p {
+    color: #7d8285;
+  }
+  
+  
+  @media (max-width:767px) {
+    .equipe h2 {
+      margin-bottom: 25px;
+      padding-top: 25px;
+      font-size: 24px;
+    }
+  }
+  
+  .equipe .intro {
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .equipe .intro p {
+    margin-bottom: 0;
+  }
+  
+  .equipe .people {
+    padding: 50px 0;
+  }
+  
+  .equipe .item {
+    text-align: center;
+  }
+  
+  .equipe .item .box {
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    margin-bottom: 30px;
+  }
+  
+  .equipe .item .name {
+    font-weight: bold;
+    margin-top: 28px;
+    margin-bottom: 8px;
+    color: inherit;
+  }
+  
+  .equipe .item .title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #d0d0d0;
+    letter-spacing: 2px;
+    font-size: 13px;
+  }
+  
+  .equipe .item .description {
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .equipe .item img {
+    max-width: 160px;
+  }
+  
+  
