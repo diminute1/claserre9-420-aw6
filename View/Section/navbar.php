@@ -31,12 +31,14 @@
             <?php if (isset($_SESSION['connected'])) { ?>
                 <!-- Dummy HTML to keep dropdown button right align -->
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item mx-5 active">
-                        <a class="nav-link" href="#">Notions théoriques<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item mx-5">
-                        <a class="nav-link" href="#">Notions pratiques</a>
-                    </li>
+                    <?php if (isset($_SESSION['type_utilisateur']) && $_SESSION['type_utilisateur'] == "etudiant") { ?>
+                        <li class="nav-item mx-5 active">
+                            <a class="nav-link" href="#">Notions théoriques<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item mx-5">
+                            <a class="nav-link" href="#">Notions pratiques</a>
+                        </li>
+                    <?php } ?>
                     <li class="nav-item mx-5">
                         <a class="nav-link disabled" href="#"></a>
                     </li>
@@ -49,7 +51,9 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="?action=profil">Profil</a>
-                            <a class="dropdown-item" href="?action=groupe">Mes groupes</a>
+                            <?php if (isset($_SESSION['type_utilisateur']) && $_SESSION['type_utilisateur'] == "professeur") { ?>
+                                <a class="dropdown-item" href="?action=groupe">Mes groupes</a>
+                            <?php } ?>
                             <a class="dropdown-item" href="?action=deconnexion">Se déconnecter</a>
                         </div>
                     </li>
