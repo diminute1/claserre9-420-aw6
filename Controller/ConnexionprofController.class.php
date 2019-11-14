@@ -18,6 +18,7 @@ class ConnexionprofController implements IAction
             if ($leprof != null && password_verify($_REQUEST['monmotdepasse'], $leprof->getMotDePasse())) {
                 $_REQUEST["messageConnexion"] = "Connexion réussie";
                 $_SESSION['connected'] = $leprof->getCourriel();
+                $_SESSION['type_utilisateur'] = "professeur";
                 $_REQUEST["theme"] = "success";
                 //$dao = new GroupeDAO();
                 $data = GroupeDAO::find($_SESSION['connected']);
