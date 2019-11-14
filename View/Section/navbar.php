@@ -43,7 +43,7 @@
                 </ul>
                 <!-- Dummy HTML to keep dropdown button right align -->
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown mx-5">
                         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user"></i>&nbsp;&nbsp;<?= $_SESSION['connected'] ?>
                         </a>
