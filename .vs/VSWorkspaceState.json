@@ -1,16 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Controller",
-    "\\Model",
-    "\\Model\\Class",
-    "\\Model\\DAO",
-    "\\Style",
-    "\\Style\\css",
-    "\\Style\\JS",
-    "\\View",
-    "\\View\\Section"
+    ""
   ],
-  "SelectedNode": "\\Style\\JS\\ourscript.js",
   "PreviewInSolutionExplorer": false
 }
