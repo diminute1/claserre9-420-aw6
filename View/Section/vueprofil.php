@@ -5,8 +5,7 @@
 		<h5 class="card-title" style="margin-left:10%;margin-right:10%;">Option de mon compte</h5>
 		<hr>
 		<div class="card-body" style="text-align:center;">
-			<a href="?action=profil" class="card-link">Modifier le mot de passe</a>
-			<a href="#" class="card-link">Another link</a>
+			<a data-toggle="modal" data-target="#modifiermdp"class="card-link">Modifier le mot de passe</a>
 		</div>
 	</div>
 </div>

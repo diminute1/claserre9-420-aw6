@@ -124,10 +124,9 @@ class EtudiantDAO {
 //        }
     
     
-    public function update($x){
+  public static function update($x){
         $request = "UPDATE etudiant SET nom = '".$x->getNom()."', prenom = '".$x->getPrenom().
-                "', mdp = '".$x->getMdp()."', note = ".$x->getNote().", id_groupe = ".$x->getIdGroupe()." ".
-                    "WHERE id = ".$x->getId();
+                "', mdp = '".$x->getMdp()."', note = ".$x->getNote().", id_groupe = ".$x->getIdGroupe()." WHERE id_etu = ".$x->getId();
         try{
             $cnx = Connection::getInstance();
             return $cnx->exec($request);

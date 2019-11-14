@@ -1,6 +1,15 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controller",
+    "\\Model",
+    "\\Model\\DAO",
+    "\\Style",
+    "\\Style\\css",
+    "\\Style\\JS",
+    "\\View",
+    "\\View\\Section"
   ],
+  "SelectedNode": "\\Model\\DAO\\ProfesseurDAO.class.php",
   "PreviewInSolutionExplorer": false
 }

@@ -21,6 +21,7 @@ require_once './Controller/EnvoyerCorrectionController.class.php';
 require_once './Controller/AproposController.class.php';
 require_once './Controller/ContactController.class.php';
 require_once './Controller/ProfilController.class.php';
+require_once './Controller/ChangerMotdepasseController.class.php';
 class Routeur
 {
     public static function getAction($nomAction)
