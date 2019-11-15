@@ -11,7 +11,7 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-                <h5>A faire</h5>
+                À faire
             </div>
 
             <!-- Modal footer -->

@@ -49,6 +49,7 @@ class NewlistController implements IAction
                 $i++;
             }
         } else {
+			$data = GroupeDAO::find($_SESSION['connected']);
             return new Page('profilprof', "Accueil", null, null);
         }
         $data = EtudiantDAO::findAll();

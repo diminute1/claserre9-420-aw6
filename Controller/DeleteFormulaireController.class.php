@@ -2,7 +2,7 @@
 require_once('./Controller/Action.interface.php');
 require_once('./View/page.class.php');
 
-class AccueilController implements IAction
+class DeleteFormulaireController implements IAction
 {
     public function execute()
     {
@@ -15,6 +15,9 @@ class AccueilController implements IAction
 			return new Page('accueil', "Accueil", null, null);
 		}
 		if(EtudiantDAO::find($_SESSION["connected"])!=null){
+			if(isset($_REQUEST['form'])){
+				FormulaireDAO::delete($_REQUEST['form']);
+			}
 			return new Page('etuconnected', "Accueil", null, null);
 		}
 		$data = GroupeDAO::find($_SESSION['connected']);

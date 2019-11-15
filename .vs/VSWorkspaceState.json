@@ -3,7 +3,6 @@
     "",
     "\\Controller",
     "\\Model",
-    "\\Model\\Class",
     "\\Model\\DAO",
     "\\Style",
     "\\Style\\css",
@@ -11,6 +10,6 @@
     "\\View",
     "\\View\\Section"
   ],
-  "SelectedNode": "\\Style\\JS\\ourscript.js",
+  "SelectedNode": "\\View\\Section\\liste_etu.php",
   "PreviewInSolutionExplorer": false
 }
