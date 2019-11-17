@@ -42,6 +42,26 @@ class GroupeDAO
     }
 
 
+    public static function findById($id)
+    {
+        try {
+          $cnx = Connection::getInstance();
+          $pstmt = $cnx->prepare("SELECT * FROM groupe WHERE id_etu = :x");
+          $pstmt->execute(array(':x' => $id));
+
+          $result = $pstmt->fetch();
+
+          if($result){
+            $grp = new Groupe();
+            $grp->loadFromArray($result);
+              return $grp;
+          }
+        } catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            return $listegroupe;
+        }
+    }
+
 
     public function update($x){
         $request = "UPDATE groupe SET id_prof = '".$x->get_id_prof()."', session = '".$x->get_session().

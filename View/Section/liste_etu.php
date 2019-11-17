@@ -1,4 +1,4 @@
-<?php if ($data == null) { ?>
+<?php if ($data["etu"] == null) { ?>
 	<div class="d-flex flex-row-reverse mx-5 my-5">
 		<form action="?action=newlist" method="post" enctype="multipart/form-data">
 			<div class="input-group mb-3">
