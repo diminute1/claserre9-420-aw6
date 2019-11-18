@@ -1,34 +1,13 @@
-<?php
-//require_once './Model/DAO/connexion.php'; 
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" type="text/css" href="../style/css/style.css">
-
-<head>
-	<title>Connexion</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</head>
-
-<body>
-	<img src="../style/images/rosemont.jpg" style="height:200px; display: block; margin:auto; margin-top: 2.5%;">
-	<form id="head-signin" method="post" action="?action=connexionetu">
-		<h1>Département d'éducation physique</h1>
-		<h2>Connexion</h2>
-		<hr />
-		<div id="form-signinn">
-			<input type="text" name="da" class="form-control" placeholder="Numéro DA" required autofocus>
-			<input type="password" name="mdp" class="form-control" placeholder="Mot de passe" required autofocus>
-			<hr />
-			<button id="btn_connect" type="submit">Se connecter</button>
-		</div>
-	</form>
-</body>
-
-</html>
+<div class="container loginetudiant">
+	<div class="form-container shadow-lg p-3 mb-5 bg-white rounded">
+		<form method="post" action="?action=connexionetu">
+			<h2 class="text-center"><img src="./style/img/rosemont.jpg" width="150px"><br></h2>
+			<div class="form-group"><input class="form-control form-control-lg" type="text" placeholder="Numéro d'admission" name="da" pattern="[0-9]{7}" title="Entrer le numéro d'admission" required=""></div>
+			<div class="form-group"><input class="form-control form-control-lg" type="password" name="mdp" placeholder="Mot de passe" required=""></div>
+			<div class="form-group">
+				<div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">Se rappeler de moi</label></div>
+			</div>
+			<div class="form-group"><button class="btn btn-success btn-block" type="submit">Se connecter</button></div>
+		</form>
+	</div>
+</div>

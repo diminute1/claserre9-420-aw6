@@ -41,7 +41,8 @@ class ProfesseurDAO
             return $prof;
         }
     }
-    public static function find($courriel) {
+
+	public static function find($courriel) {
         $cnx = Connection::getInstance();
         $pstmt = $cnx->prepare("SELECT * FROM professeur WHERE courriel = :x");
         $pstmt->execute(array(':x' => $courriel));
@@ -62,5 +63,6 @@ class ProfesseurDAO
         } catch (Exception $ex) {
             throw $ex;
         }
-    }
+	}
+
 }

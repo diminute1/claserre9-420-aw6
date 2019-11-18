@@ -3,7 +3,6 @@ include_once './Model/Class/Formulaire.php';
 include_once './Model/DAO/FormulaireDAO.php';
 $id = 0;
 $form = $data;
-echo $form;
 ?>
 <script>
     function showExo() {

@@ -13,49 +13,24 @@
     </button>
 </div>
 
-<div class="container">
-    <div class="row">
+
+<div class="list-group container">
+    <ul>
         <?php
         $i = 0;
         while ($data->next()) {
             $grp = $data->get($i);
-            if ($grp == null) {
-                echo ('<p>Aucun groupe trouvé</p>');
-            }
             $p = $data->current(); ?>
-            <div class="col-lg-3">
-                <div class="card my-2">
-                    <img src="https://dummyimage.com/600x400/992c99/fff.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title"><?= $p->get_nom_groupe(); ?></h4>
-                        <h6 class="card-subtitle mb-2 text-muted"><?= $p->get_session() . " " . $p->get_annee(); ?></h6>
-                        <form class="d-inline-block" method="post" action="?action=afficherGroupe">
-                            <input type="hidden" name="id_groupe" value="<?= $p->get_id_groupe() ?>" />
-                            <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></button>
-                        </form>
 
-                        <form class="d-inline-block" method="post" action="?action=Supprimergroupe&id=<?= $p->get_id_groupe() ?>">
-                            <input type="hidden" name="id_groupe" value="<?= $p->get_id_groupe() ?>" />
-                            <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center py-5">
+                <h3><i class="fas fa-users"></i>&nbsp; <?= $p->get_nom_groupe(); ?> (<?= $p->get_session() . " " . $p->get_annee(); ?>)</h3>
+                <span>
+                    <a href="?action=affichergroupe&id=<?= $p->get_id_groupe() ?>" class="btn btn-success text-white" role="button"><i class="fas fa-eye"></i></a>
+                    <a href="?action=supprimergroupe&id=<?= $p->get_id_groupe() ?>" class="btn btn-danger text-white" role="button"><i class="fas fa-trash"></i></a>
+                </span>
+            </li>
+
         <?php } ?>
-    </div>
+    </ul>
 </div>
-
-
-<br>
-<br>
-<br>
-
-
-<button onclick="logout()">Se déconnecter</button>
-<script>
-    function logout() {
-        url = window.location.href;
-        new_url = url.substring(0, url.indexOf('?'));
-        window.location.href = new_url + "?action=deconnexion";
-    }
-</script>
