@@ -45,20 +45,19 @@ class GroupeDAO
     public static function findById($id)
     {
         try {
+          $grp=new Groupe();
           $cnx = Connection::getInstance();
-          $pstmt = $cnx->prepare("SELECT * FROM groupe WHERE id_etu = :x");
+          $pstmt = $cnx->prepare("SELECT * FROM groupe WHERE id_groupe = ".$id);
           $pstmt->execute(array(':x' => $id));
 
-          $result = $pstmt->fetch();
-
+          $result = $pstmt->fetch(PDO::FETCH_ASSOC);
           if($result){
-            $grp = new Groupe();
             $grp->loadFromArray($result);
-              return $grp;
+            return $grp;
           }
         } catch (PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";
-            return $listegroupe;
+            return $grp;
         }
     }
 

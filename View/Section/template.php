@@ -7,7 +7,7 @@
 </head>
 
 
-<body 
+<body
 <?=(!isset($_REQUEST['action']) && !isset($_SESSION['connected']) ? "style = 'background-image: url(./style/img/gymrosemont.jpg) ; background-size: auto; background-repeat: no-repeat; background-position: center center; '" : '') ?>
 <?=(isset($_REQUEST['action'])  && $_REQUEST['action']=='portailprof' ? "style = 'background-color : #f0f0f5'" : '') ?>
 <?=(isset($_REQUEST['action'])  && $_REQUEST['action']=='portailetu' ? "style = 'background-color : #f0f0f5'" : '') ?>
@@ -39,7 +39,7 @@
     ?>
 	<?php include "modal_modifier_mdp.php"
     ?>
-    <?php //include 'footer.php' 
+    <?php include "modal_ajout_remise.php"
     ?>
     <?php include "script.php" ?>
 </body>
