@@ -95,7 +95,7 @@ class Formulaire {
         $this->note = $tab["note"];
         $this->type = $tab["type"];
         $this->frequence = $tab["frequence"];
-        $this->com = $tab["comment"];
+        //$this->com = $tab["comment"];
     }
 
 }

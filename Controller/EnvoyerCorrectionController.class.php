@@ -19,13 +19,13 @@ class EnvoyerCorrectionController implements IAction {
             return new Page('profilprof', "Accueil", null, null);
             
         }
-        $f = FormulaireDAO::find($_REQUEST['id']);
+        $f = FormulaireService::trouver($_REQUEST['id']);
         if ($f == null) {
             return new Page('profilprof', "Accueil", null, null);
         }
         $f->setNote($_REQUEST['note']);
         $f->setCom($_REQUEST['commentaire']);
-        FormulaireDAO::update($f);
+        FormulaireService::modifier($f);
         return new Page('correction_formulaire', 'Formulaire', $f, null);
     }
 }

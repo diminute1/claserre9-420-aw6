@@ -14,7 +14,7 @@
 class AfficherActiviteController implements IAction {
     //put your code here
     public function execute() {
-        $etu= EtudiantDAO::find($_REQUEST['id']);
+        $etu= EtudiantService::trouver($_REQUEST['id']);
         return new Page('liste_activites','Activites',$etu,null);
     }
 

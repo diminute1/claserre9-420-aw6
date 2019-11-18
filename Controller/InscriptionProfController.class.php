@@ -22,16 +22,16 @@ class InscriptionprofController implements IAction
 				if (!isset($_SESSION)) {
 					session_start();
 				}
-				ProfesseurDAO::ajouter($_REQUEST["nom"], $_REQUEST["prenom"], $_REQUEST["courriel"], $_REQUEST["motdepasse"]);
+				ProfService::creer($_REQUEST["nom"], $_REQUEST["prenom"], $_REQUEST["courriel"], $_REQUEST["motdepasse"]);
 				$_SESSION['connected'] = $_REQUEST["courriel"];
 				$_REQUEST["messageConnexion"] = "Vous êtes bien connectés";
 				$_REQUEST["theme"] = "success";
 				$_REQUEST["messageConnexion"];
-				$data = GroupeDAO::find($_SESSION['connected']);
+				$data = GroupeService::trouverParProf($_SESSION['connected']);
 				return new Page("profilprof", "Profil", $data, null);
 			}
 		}
-		$data = GroupeDAO::find($_SESSION['connected']);
+		$data = GroupeService::trouverParProf($_SESSION['connected']);
 		return new Page("profilprof", "Profil", $data, null);
 	}
 }
