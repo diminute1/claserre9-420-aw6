@@ -7,6 +7,11 @@
         Creer un groupe d'étudiants
     </button>
 </div>
+<div class="d-flex flex-row-reverse mx-5 my-5">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modifiermdp">
+        Modifier le mot de passe
+    </button>
+</div>
 
 
 <div class="list-group container">
