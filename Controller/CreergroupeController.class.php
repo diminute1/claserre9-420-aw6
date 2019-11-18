@@ -2,6 +2,8 @@
 require_once('./Controller/Action.interface.php');
 require_once('./View/page.class.php');
 require_once('./Model/DAO/groupeDAO.php');
+require_once './Model/DAO/EtudiantDAO.php';
+require_once './Model/Class/Etudiant.php';
 
 class CreergroupeController implements IAction
 {
@@ -19,7 +21,6 @@ class CreergroupeController implements IAction
 
             GroupeDAO::createGroupe($legroupe);
             $_REQUEST['ajoutgroupe'] = "Le groupe a été bien créé";
-
             return new Page('profilprof', "Profil", $data, null);
         }
         return new Page('profilprof', "Profil", $data, null);

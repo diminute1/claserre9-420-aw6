@@ -31,6 +31,21 @@ class EtudiantDAO {
         }
     }
 
+    public static function AddEtuWithIDgroup($x,$id_groupe) {
+        $mdpHash = $x->getMdp();
+        $hash = password_hash($mdpHash, PASSWORD_DEFAULT);
+        $request = "INSERT INTO etudiant (id_etu,nom,prenom,mdp,note,id_groupe) VALUES (" . $x->getId() . 
+                ",'" . $x->getNom() . "','" . $x->getPrenom() . 
+                "','" . $hash . "'," .$x->getNote().",".$id_groupe. ");";
+        try {
+            $cnx = Connection::getInstance();
+            return $cnx->exec($request);
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
+
     public static function findAll() {
         try {
             $liste = array();
@@ -109,10 +124,9 @@ class EtudiantDAO {
 //        }
     
     
-    public function update($x){
+  public static function update($x){
         $request = "UPDATE etudiant SET nom = '".$x->getNom()."', prenom = '".$x->getPrenom().
-                "', mdp = '".$x->getMdp()."', note = ".$x->getNote().", id_groupe = ".$x->getIdGroupe()." ".
-                    "WHERE id = ".$x->getId();
+                "', mdp = '".$x->getMdp()."', note = ".$x->getNote().", id_groupe = ".$x->getIdGroupe()." WHERE id_etu = ".$x->getId();
         try{
             $cnx = Connection::getInstance();
             return $cnx->exec($request);

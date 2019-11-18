@@ -3,18 +3,14 @@
 require_once('./Controller/Action.interface.php');
 require_once('./View/page.class.php');
 
-class DeconnexionController implements IAction {
+class DeconnexionController implements IAction
+{
 
-    public function execute() {
-        if (!isset($_SESSION)) {
-            session_start();
-        }
-        if (!isset($_SESSION['connected'])){
-            return new Page('accueil', "Accueil", null, null);
-        }
+    public function execute()
+    {
+        unset($_SESSION["connected"]);
+        unset($_SESSION["type_utilisateur"]);
         session_destroy();
-        session_abort();
         return new Page('accueil', "Accueil", null, null);
     }
-
 }
