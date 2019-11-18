@@ -47,9 +47,14 @@
                                 <option value="2024">2024</option>
                             </select>
                         </div>
+<!--
+                        <div class="custom-file">
+          								<input name="file" type="file" accept=".csv,.txt" class="custom-file-input" id="customFile">
+          								<label class="custom-file-label" for="customFile">Importer une liste</label>
+          							</div>
+-->
 
-                        
-                        
+
                         <div class="form-group text-center mx-auto mt-3"><button class="btn btn-success btn-sm" type="submit" name="action" value="creergroupe">Créer le groupe</button></div>
                     </form>
                 </div>

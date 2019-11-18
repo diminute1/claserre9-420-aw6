@@ -1,4 +1,4 @@
-<?php if ($data == null) { ?>
+<?php if ($data["etu"] == null) { ?>
 	<div class="d-flex flex-row-reverse mx-5 my-5">
 		<form action="?action=newlist" method="post" enctype="multipart/form-data">
 			<div class="input-group mb-3">
@@ -19,7 +19,7 @@
 	<ul>
 		<?php
 
-		foreach ($data as $etu) { ?>
+		foreach ($data["etu"] as $etu) { ?>
 			<li class="list-group-item d-flex justify-content-between align-items-center py-5 shadow p-5 mb-1 bg-white rounded">
 				<h3><i class="fas fa-user-check"></i>&nbsp; <?= "(" . $etu->getId() . ")" . "-" . $etu->getNom() . ", " . $etu->getPrenom();  ?></h3>
 				<span>
