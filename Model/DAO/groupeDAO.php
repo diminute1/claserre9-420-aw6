@@ -56,7 +56,7 @@ class GroupeDAO
 
     }
 
-    public function deleteGroupe($x)
+    public static function deleteGroupe($x)
     {
         $request = "DELETE FROM `groupe` WHERE `groupe`.`id_groupe`=" . $x;
         //$request = "DELETE FROM groupe WHERE id_groupe = '. $x->get_id_groupe(). "'";

@@ -16,8 +16,8 @@ class ConnexionetuController implements IAction
             return new Page('accueil', "Accueil", null, null);
         }
         if (isset($_POST["da"]) && isset($_POST["mdp"])) {
-            $etu = EtudiantDAO::find($_POST['da']);
-            if ($etu != null && password_verify($_POST['mdp'], $etu->getMdp())) {
+            $etu = EtudiantService::trouver($_POST['da']);
+            if ($etu != null && password_verify($_POST['mdp'],$etu->getMdp())) {
                 $_SESSION['connected'] = $etu->getId();
                 $_SESSION['type_utilisateur'] = "etudiant";
             } else {

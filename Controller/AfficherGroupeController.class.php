@@ -6,8 +6,8 @@ class AffichergroupeController implements IAction
 {
 	public function execute()
 	{
-		if(isset($_REQUEST['id'])) $id_groupe = $_REQUEST['id'];
-		$data = EtudiantDAO::findByGroupe($id_groupe);
+		$groupe = $_REQUEST['id_groupe'];
+		$data = EtudiantService::TrouverParGroupe($groupe);
 		return new Page('view_groupe', "Profil | Groupe", $data, null);
 	}
 }
