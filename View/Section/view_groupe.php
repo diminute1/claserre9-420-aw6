@@ -1,5 +1,4 @@
 <div class=jumbotron>
-  <?php echo $data;?>
 </div>
 <nav>
   <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
