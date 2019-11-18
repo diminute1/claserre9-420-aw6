@@ -12,12 +12,17 @@ require_once './Controller/AjoutergroupeController.class.php';
 require_once './Controller/SupprimergroupeController.class.php';
 require_once './Controller/GroupeController.class.php';
 require_once './Controller/CreergroupeController.class.php';
-require_once './Controller/AfficherGroupeController.class.php';
+require_once './Controller/AffichergroupeController.class.php';
 require_once './Controller/GetFormulaireController.class.php';
 require_once './Controller/CorrigerFormulaireController.class.php';
 require_once './Controller/NewFormController.class.php';
 require_once './Controller/AfficherActiviteController.class.php';
 require_once './Controller/EnvoyerCorrectionController.class.php';
+require_once './Controller/AproposController.class.php';
+require_once './Controller/ContactController.class.php';
+require_once './Controller/ProfilController.class.php';
+require_once './Controller/ChangerMotdepasseController.class.php';
+require_once './Controller/DeleteFormulaireController.class.php';
 class Routeur
 {
     public static function getAction($nomAction)

@@ -2,7 +2,7 @@
 require_once('./Controller/Action.interface.php');
 require_once('./View/page.class.php');
 
-class AfficherGroupeController implements IAction
+class AffichergroupeController implements IAction
 {
 	public function execute()
 	{

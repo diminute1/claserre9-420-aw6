@@ -8,6 +8,7 @@ class NewlistController implements IAction
 
     public function execute()
     {
+
         if (!isset($_SESSION)) {
             session_start();
         }
@@ -47,6 +48,7 @@ class NewlistController implements IAction
                 $i++;
             }
         } else {
+			$data = GroupeDAO::find($_SESSION['connected']);
             return new Page('profilprof', "Accueil", null, null);
         }
         $data = EtudiantService::TrouverParGroupe($id);

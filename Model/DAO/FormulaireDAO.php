@@ -88,6 +88,17 @@ class FormulaireDAO
         }
     }
 
+	public static function delete($id)
+    {
+        $requete = 'DELETE FROM formulaire WHERE id_form="' .$id. '"';
+        try {
+            $cnx = Connection::getInstance();
+		    return $cnx->exec($requete);
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
     public static function update($x)
     {
         $request = "UPDATE formulaire SET sport = '" . $x->getSport() . "', type = '" . $x->getType() .

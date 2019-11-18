@@ -41,4 +41,28 @@ class ProfesseurDAO
             return $prof;
         }
     }
+
+	public static function find($courriel) {
+        $cnx = Connection::getInstance();
+        $pstmt = $cnx->prepare("SELECT * FROM professeur WHERE courriel = :x");
+        $pstmt->execute(array(':x' => $courriel));
+        $result = $pstmt->fetch(PDO::FETCH_OBJ);
+        
+        if($result){
+            $prof=new  Professeur($result->courriel, $result->nom, $result->prenom, $result->motdepasse);
+            
+            return $prof;
+        }
+    }	
+    public static function update($x){
+        $request = "UPDATE professeur SET nom = '".$x->getNom()."', prenom = '".$x->getPrenom()."', motdepasse = '".$x->getMotDePasse()."' WHERE courriel = '".$x->getCourriel()."'";
+        try{
+            $cnx = Connection::getInstance();
+            return $cnx->exec($request);
+            
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+	}
+
 }

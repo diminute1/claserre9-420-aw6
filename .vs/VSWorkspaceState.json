@@ -3,7 +3,6 @@
     "",
     "\\Controller",
     "\\Model",
-    "\\Model\\Class",
     "\\Model\\DAO",
     "\\Style",
     "\\Style\\css",
@@ -11,6 +10,6 @@
     "\\View",
     "\\View\\Section"
   ],
-  "SelectedNode": "\\Style\\JS\\ourscript.js",
+  "SelectedNode": "\\add_exo.php",
   "PreviewInSolutionExplorer": false
 }

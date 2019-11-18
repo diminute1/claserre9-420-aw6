@@ -12,6 +12,10 @@ class ConnexionprofController implements IAction
 
     public function execute()
     {
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        
         if (isset($_REQUEST["moncourriel"]) && isset($_REQUEST["monmotdepasse"])) {
             if (!isset($_SESSION)) {
                 session_start();
@@ -20,6 +24,7 @@ class ConnexionprofController implements IAction
             if ($leprof != null && password_verify($_REQUEST['monmotdepasse'], $leprof->getMotDePasse())) {
                 $_REQUEST["messageConnexion"] = "Connexion réussie";
                 $_SESSION['connected'] = $leprof->getCourriel();
+                $_SESSION['type_utilisateur'] = "professeur";
                 $_REQUEST["theme"] = "success";
                 //$dao = new GroupeDAO();
                 $data = GroupeService::trouverParProf($_SESSION['connected']);

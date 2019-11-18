@@ -18,7 +18,6 @@ class CreergroupeController implements IAction
 
             GroupeService::creer($legroupe);
             $_REQUEST['ajoutgroupe'] = "Le groupe a été bien créé";
-
             return new Page('profilprof', "Profil", $data, null);
         }
         return new Page('profilprof', "Profil", $data, null);
