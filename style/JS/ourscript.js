@@ -8,7 +8,7 @@ $(document).ready(function () {
         }
     );
 
-   
+    $("a").css("color","black")
     $("a").mouseover(function () {
         $("a").css({
             "color":"black",

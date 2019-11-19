@@ -12,7 +12,7 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <div>
-                    <form id="form-signin" class="form" method="post" action="">
+                    <form class="form" method="post" action="">
                         <div class="input-group input-group-sm mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Ancien mot de passe :</span>
