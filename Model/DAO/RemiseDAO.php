@@ -17,17 +17,37 @@
  class RemiseDAO
  {
    public static function create(Remise $x){
-     $request = "INSERT INTO remise (id_groupe,date_remise) VALUES ('". $x->getGroupe() .  "','"  . $x->getDate() . "');";
+     $request = "INSERT INTO remise (id_groupe,date_remise,id) VALUES ('". $x->getGroupe() .  "','"  . $x->getDate() . "','"  . $x->getId() . "');";
      try {
          $cnx = Connection::getInstance();
-         return $cnx->exec($request);
+         if($cnx->exec($request)){
+           return $x;
+         }
+
      } catch (Exception $ex) {
          throw $ex;
      }
    }
 
    public static function findById(string $id){
-     return false;
+     try {
+       $retour=null;
+         $cnx = Connection::getInstance();
+         $pstmt = $cnx->prepare('SELECT * FROM remise WHERE id=:x');
+         $pstmt->execute(array(':x' => $id));
+
+         $result = $pstmt->fetch(PDO::FETCH_ASSOC);
+         if($result){
+             $retour = new Remise();
+             $retour->loadFromArray($result);
+             return $retour;
+         }
+         $cnx = null;
+         return $retour;
+     } catch (Exception $ex) {
+         print "Error : " . $ex->getMessage() . "<br/>";
+         return $retour;
+     }
    }
 
    public static function findByGroupe(String $id_groupe){
@@ -38,6 +58,9 @@
          $cnx = Connection::getInstance();
 
          $res = $cnx->query($requete);
+         if($res==null){
+           return $liste;
+         }
          foreach ($res as $row) {
              $e = new Remise();
              $e->loadFromArray($row);

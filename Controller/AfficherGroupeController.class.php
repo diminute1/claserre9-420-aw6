@@ -2,7 +2,7 @@
 require_once('./Controller/Action.interface.php');
 require_once('./View/page.class.php');
 require_once './Model/Class/Remise.php';
-require_once './Model/DAO/RemiseDAO.php';
+require_once './Service/RemiseService.php';
 
 class AffichergroupeController implements IAction
 {
@@ -10,9 +10,9 @@ class AffichergroupeController implements IAction
 	{
 		if(isset($_REQUEST['id'])) $id_groupe = $_REQUEST['id'];
 		$data=array(
-		"etu" => EtudiantDAO::findByGroupe($id_groupe),
-		"groupe" => GroupeDAO::findById($id_groupe),
-		"remise" => RemiseDAO::findByGroupe($id_groupe),
+		"etu" => EtudiantService::TrouverParGroupe($id_groupe),
+		"groupe" => GroupeService::trouver($id_groupe),
+		"remise" => RemiseService::TrouverParGroupe($id_groupe),
 	);
 		return new Page('view_groupe', "Profil | Groupe", $data, null);
 	}

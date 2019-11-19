@@ -20,8 +20,8 @@ class EtudiantDAO {
     public static function Create($x) {
         $mdpHash = $x->getMdp();
         $hash = password_hash($mdpHash, PASSWORD_DEFAULT);
-        $request = "INSERT INTO etudiant (id_etu,nom,prenom,mdp,note,id_groupe) VALUES (" . $x->getId() . 
-                ",'" . $x->getNom() . "','" . $x->getPrenom() . 
+        $request = "INSERT INTO etudiant (id_etu,nom,prenom,mdp,note,id_groupe) VALUES (" . $x->getId() .
+                ",'" . $x->getNom() . "','" . $x->getPrenom() .
                 "','" . $hash . "'," .$x->getNote().",".$x->getIdGroupe(). ");";
         try {
             $cnx = Connection::getInstance();
@@ -34,8 +34,8 @@ class EtudiantDAO {
     public static function AddEtuWithIDgroup($x,$id_groupe) {
         $mdpHash = $x->getMdp();
         $hash = password_hash($mdpHash, PASSWORD_DEFAULT);
-        $request = "INSERT INTO etudiant (id_etu,nom,prenom,mdp,note,id_groupe) VALUES (" . $x->getId() . 
-                ",'" . $x->getNom() . "','" . $x->getPrenom() . 
+        $request = "INSERT INTO etudiant (id_etu,nom,prenom,mdp,note,id_groupe) VALUES (" . $x->getId() .
+                ",'" . $x->getNom() . "','" . $x->getPrenom() .
                 "','" . $hash . "'," .$x->getNote().",".$id_groupe. ");";
         try {
             $cnx = Connection::getInstance();
@@ -72,9 +72,9 @@ class EtudiantDAO {
         $cnx = Connection::getInstance();
         $pstmt = $cnx->prepare("SELECT * FROM etudiant WHERE id_etu = :x");
         $pstmt->execute(array(':x' => $id));
-        
+
         $result = $pstmt->fetch(PDO::FETCH_OBJ);
-        
+
         if($result){
             $etu=new Etudiant($result->id_etu,$result->nom,$result->prenom,$result->mdp,$result->id_groupe);
             $etu->setNote($result->note);
@@ -90,6 +90,9 @@ class EtudiantDAO {
             $cnx = Connection::getInstance();
 
             $res = $cnx->query($requete);
+            if($res==null){
+              return $liste;
+            }
             foreach ($res as $row) {
                 $e = new Etudiant();
                 $e->loadFromArray($row);
@@ -104,10 +107,10 @@ class EtudiantDAO {
         }
 		}
 
-        
-        
-        
-        
+
+
+
+
 //        $request = "SELECT * FROM etudiant WHERE id = '" . $id . "'";
 //        try {
 //            $cnx = Connection::getInstance();
@@ -117,25 +120,25 @@ class EtudiantDAO {
 ////$etu->setId($param->id);
 //            //$etu->loadFromArray($res);
 //            return $etu;
-//            
+//
 //        } catch (Exception $ex) {
 //            throw $ex;
 //            return null;
 //        }
-    
-    
+
+
   public static function update($x){
         $request = "UPDATE etudiant SET nom = '".$x->getNom()."', prenom = '".$x->getPrenom().
                 "', mdp = '".$x->getMdp()."', note = ".$x->getNote().", id_groupe = ".$x->getIdGroupe()." WHERE id_etu = ".$x->getId();
         try{
             $cnx = Connection::getInstance();
             return $cnx->exec($request);
-            
+
         } catch (Exception $ex) {
             throw $ex;
         }
     }
-    
+
 
     public function delete($x) {
         $request = "DELETE FROM etudiant WHERE id = '" . $x->getId() . "'";

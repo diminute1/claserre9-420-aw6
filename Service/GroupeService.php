@@ -25,9 +25,13 @@ class GroupeService {
             return null;
         }
     }
-    
+
     public static function trouverParProf($id){
         return GroupeDAO::find($id);
+    }
+
+    public static function Trouver($id){
+        return GroupeDAO::findById($id);
     }
 
 }

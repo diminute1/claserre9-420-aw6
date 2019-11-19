@@ -10,9 +10,9 @@
 		<?php
 		foreach ($data["remise"] as $remise) { ?>
 			<li class="list-group-item d-flex justify-content-between align-items-center py-5 shadow p-5 mb-1 bg-white rounded">
-				<h3><i class="fas fa-user-check"></i>&nbsp; <?= $remise->getDate() ?></h3>
+				<h3><i class="fa fa-calendar"></i>&nbsp; <?= $remise->getDate() ?></h3>
 				<span>
-					<a href="?action=afficherRemise&id=<?= $remise->getGroupe() ?>&date=<?=$remise->getDate()?>" class="btn btn-success text-white" role="button"><i class="fas fa-user-circle"></i>&nbsp; Afficher</a>
+					<a href="?action=afficherRemise&id=<?= $remise->getGroupe() ?>&date=<?=$remise->getId()?>" class="btn btn-success text-white" role="button"><i class="fas fa-user-circle"></i>&nbsp; Afficher</a>
 					<!--<a href="?action=afficherActivite&id=" class="btn btn-danger text-white" role="button"><i class="fas fa-chart-line"></i>&nbsp; Activités</a>-->
 				</span>
 			</li>
