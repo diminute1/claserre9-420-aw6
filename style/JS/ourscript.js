@@ -1,7 +1,4 @@
 $(document).ready(function () {
-
-
-
     $(".card").hover(
         function () {
             $(this).addClass('shadow-lg').css('cursor', 'pointer');
@@ -11,7 +8,7 @@ $(document).ready(function () {
         }
     );
 
-    $("a").css("color","black")
+   
     $("a").mouseover(function () {
         $("a").css({
             "color":"black",
@@ -25,20 +22,5 @@ $(document).ready(function () {
             $(this).remove();
         });
     }, 2000);
-
-    $('footer').css({
-        "position":"fixed",
-        "left":"0",
-        "bottom":"0",
-        "text-align":"center",
-        "width":"100%",
-        "background-color":"#EAECEE",
-        "vertical-align":"middle",
-    })
-
-    $('footer').height(70);
-
-    $("<br/> <br/> <br/> <br/>").insertBefore("footer")
-
 
 });
