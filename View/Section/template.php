@@ -7,7 +7,14 @@
 </head>
 
 
-<body <?= (!isset($_REQUEST['action']) && !isset($_SESSION['connected']) ? "style = 'background-image: url(./style/img/gymrosemont.jpg) ; background-size: auto; background-repeat: no-repeat; background-position: center center; '" : '') ?> <?= (isset($_REQUEST['action'])  && $_REQUEST['action'] == 'portailprof' ? "style = 'background-color : #f0f0f5'" : '') ?> <?= (isset($_REQUEST['action'])  && $_REQUEST['action'] == 'portailetu' ? "style = 'background-color : #f0f0f5'" : '') ?> <?= (isset($_REQUEST['action'])  && $_REQUEST['action'] == 'apropos' ? "style = 'background-color : #f0f0f5'" : '') ?> <?= (isset($_REQUEST['action'])  && ($_REQUEST['action'] == 'connexionprof' || $_REQUEST['action'] == 'groupe') ? "style = 'background-color : #f0f0f5'" : '') ?> <?= (isset($_REQUEST['action'])  && $_REQUEST['action'] == 'deconnexion' ? "style = 'background-image: url(./style/img/gymrosemont.jpg) ; background-size: auto; background-repeat: no-repeat; background-position: center center; '" : '') ?> <?= (isset($_REQUEST['action'])  && !isset($_SESSION['connected']) && $_REQUEST['action'] == 'accueil' ? "style = 'background-image: url(./style/img/gymrosemont.jpg) ; background-size: auto; background-repeat: no-repeat; background-position: center center; '" : '') ?>>
+<body 
+<?= (!isset($_REQUEST['action']) && !isset($_SESSION['connected']) ? "style = 'background-image: url(./style/img/gymrosemont.jpg) ; background-size: auto; background-repeat: no-repeat; background-position: center center; '" : '') ?> 
+<?= (isset($_REQUEST['action'])  && $_REQUEST['action'] == 'portailprof' ? "style = 'background-color : #f0f0f5'" : '') ?> 
+<?= (isset($_REQUEST['action'])  && $_REQUEST['action'] == 'portailetu' ? "style = 'background-color : #f0f0f5'" : '') ?> 
+<?= (isset($_REQUEST['action'])  && $_REQUEST['action'] == 'apropos' ? "style = 'background-color : #f0f0f5'" : '') ?> 
+<?= (isset($_REQUEST['action'])  && ($_REQUEST['action'] == 'connexionprof' || $_REQUEST['action'] == 'groupe') ? "style = 'background-color : #f0f0f5'" : '') ?> 
+<?= (isset($_REQUEST['action'])  && $_REQUEST['action'] == 'deconnexion' ? "style = 'background-image: url(./style/img/gymrosemont.jpg) ; background-size: auto; background-repeat: no-repeat; background-position: center center; '" : '') ?> 
+<?= (isset($_REQUEST['action'])  && !isset($_SESSION['connected']) && $_REQUEST['action'] == 'accueil' ? "style = 'background-image: url(./style/img/gymrosemont.jpg) ; background-size: auto; background-repeat: no-repeat; background-position: center center; '" : "style = 'background-color : #f0f0f5'") ?>>
     <?php
     include "navbar.php";
     ?>
@@ -33,7 +40,7 @@
     <?php include "modal_ajout_remise.php"
     ?>
 
-    
+
 </body>
 
 <?php include "script.php" ?>
