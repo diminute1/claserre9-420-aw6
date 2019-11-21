@@ -41,10 +41,10 @@
             <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
                     <div class="container w-50 mx-auto my-5 text-center">
-                        <form action="?action=connexionprof" method="post">
+                        <form id='formprof' action="?action=connexionprof" method="post">
                             <div class="form-group"><input class="form-control" type="email" name="moncourriel" placeholder="Courriel" required=""></div>
                             <div class="form-group"><input class="form-control" type="password" name="monmotdepasse" placeholder="Mot de passe" required=""></div>
-                            <div class="form-group"><button class="btn btn-danger btn-lg" type="submit">Se connecter</button></div>
+                            <div id='connecter' class="form-group"><button class="btn btn-danger btn-lg" type="submit">Se connecter</button></div>
                         </form>
                     </div>
                 </div>
