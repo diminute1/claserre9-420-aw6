@@ -1,6 +1,6 @@
 <?php
 require_once(__DIR__ . '/../../Exceptions/IllegalArgumentException.class.php');
-class Groupe
+class Groupe implements JsonSerializable
 {
     private $_id_groupe, $_id_prof, $_session, $_nom_groupe, $_annee;
 
@@ -78,6 +78,23 @@ class Groupe
         $this->_session  = $t['session'];
         $this->_nom_groupe = $t['nom_groupe'];
         $this->_annee = $t['annee'];
+    }
+
+    public function loadFromJson($t)
+    {
+        $this->_id_groupe = $t['id_groupe'];
+        $this->_id_prof = $t['id_prof'];
+        $this->_session  = $t['session'];
+        $this->_nom_groupe = $t['nom_groupe'];
+        $this->_annee = $t['annee'];
+    }
+
+    public function jsonSerialize()
+    {
+
+        return array_filter(get_object_vars($this), function ($var) {
+            return (!is_null($var));
+        });
     }
 
 

@@ -1,6 +1,6 @@
 <?php
 require_once(__DIR__ . '/../../Exceptions/IllegalArgumentException.class.php');
-class Professeur
+class Professeur implements JsonSerializable
 {
     private $nom, $prenom, $courriel, $motdepasse;
 
