@@ -16,8 +16,10 @@
     <?php include "notification.php"
     ?>
 
+    <main id='contenu'>
+        <?php echo $contenu; ?>
+    </main>
 
-    <?php echo $contenu; ?>
 
     <br>
     <br>
