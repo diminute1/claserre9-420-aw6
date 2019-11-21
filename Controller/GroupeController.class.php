@@ -6,6 +6,10 @@ class GroupeController implements IAction
 {
     public function execute()
     {
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
         $data = GroupeService::trouverParProf($_SESSION['connected']);
         return new Page('profilprof', "Profil", $data, null);
     }

@@ -72,4 +72,20 @@ class Professeur implements JsonSerializable
         $this->prenom = $tab["prenom"];
         $this->motdepasse = $tab["motdepasse"];
     }
+
+    public function loadFromJson($tab)
+    {
+        $this->courriel = $tab["courriel"];
+        $this->nom = $tab["nom"];
+        $this->prenom = $tab["prenom"];
+        $this->motdepasse = $tab["motdepasse"];
+    }
+
+    public function jsonSerialize()
+    {
+
+        return array_filter(get_object_vars($this), function ($var) {
+            return (!is_null($var));
+        });
+    }
 }
