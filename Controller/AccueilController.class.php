@@ -3,9 +3,11 @@
 require_once('./Controller/Action.interface.php');
 require_once('./View/page.class.php');
 
-class AccueilController implements IAction {
+class AccueilController implements IAction
+{
 
-    public function execute() {
+    public function execute()
+    {
         if (!isset($_SESSION)) {
             session_start();
         }
@@ -15,8 +17,7 @@ class AccueilController implements IAction {
         if (EtudiantService::trouver($_SESSION['connected'])) {
             return new Page('etuconnected', "Accueil", null, null);
         }
-        $data = GroupeService::trouverParProf($_SESSION['connected']);
+        //$data = GroupeService::trouverParProf($_SESSION['connected']);
         return new Page('profilprof', "Mon profil", $data, null);
     }
-
 }
