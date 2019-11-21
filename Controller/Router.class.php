@@ -25,6 +25,8 @@ require_once './Controller/ChangerMotdepasseController.class.php';
 require_once './Controller/DeleteFormulaireController.class.php';
 require_once './Controller/AjouterRemiseController.class.php';
 require_once './Controller/AfficherRemiseController.class.php';
+require_once './Controller/AjouterEtudiantController.class.php';
+
 class Routeur
 {
     public static function getAction($nomAction)

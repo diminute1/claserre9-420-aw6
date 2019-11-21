@@ -13,7 +13,7 @@ class AffichergroupeController implements IAction
 		$data = array(
 			"etu" => EtudiantService::TrouverParGroupe($id_groupe),
 			"groupe" => GroupeService::trouver($id_groupe),
-			"remise" => RemiseService::TrouverParGroupe($id_groupe),
+			"remise" => RemiseService::TrouverParGroupe("".$id_groupe),
 		);
 		return new Page('view_groupe', "Profil | Groupe", $data, null);
 		//return new Data($data, 200);

@@ -28,5 +28,10 @@
 				</span>
 			</li>
 		<?php } ?>
+		<span>
+			<button type="button" class="btn btn-success text-white" style="float:right;margin-top:2.5%;" data-toggle="modal" data-target="#ajouteretudiant">
+				Ajouter un étudiant à ce groupe
+			</button>
+		</span>
 	</ul>
 </div>
