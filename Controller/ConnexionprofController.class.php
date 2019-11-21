@@ -35,7 +35,7 @@ class ConnexionprofController implements IAction
 
         //$dao = new GroupeDAO();
         $data = GroupeService::trouverParProf($_SESSION['connected']);
-        return new Data($data, 200);
-        //return new Page('profilprof', "Mon profil", $data, null);
+        //return new Data($data, 200);
+        return new Page('profilprof', "Mon profil", $data, null);
     }
 }
