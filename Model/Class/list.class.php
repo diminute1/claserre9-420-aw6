@@ -1,6 +1,6 @@
 <?php
 
-class Liste
+class Liste implements JsonSerializable
 {
     private $items;
     private $current;
@@ -70,7 +70,6 @@ class Liste
         if (isset($this->items[$this->current])) {
             echo $this->items[$this->current];
         }
-
     }
 
     /**
@@ -88,4 +87,9 @@ class Liste
         return null;
     }
 
+    public function jsonSerialize()
+    {
+
+        return $this->items;
+    }
 }

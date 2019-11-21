@@ -15,10 +15,7 @@
         <?php
         $i = 0;
         while ($data->next()) {
-            $grp = $data->get($i);
             $p = $data->current(); ?>
-
-
             <li class="list-group-item d-flex justify-content-between align-items-center py-5">
                 <h3><i class="fas fa-users"></i>&nbsp; <?= $p->get_nom_groupe(); ?> (<?= $p->get_session() . " " . $p->get_annee(); ?>)</h3>
                 <span>
