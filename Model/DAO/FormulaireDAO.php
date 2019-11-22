@@ -17,8 +17,8 @@ class FormulaireDAO
 {
     public static function Create($x)
     {
-        $request = "INSERT INTO formulaire (id_form,id_etu,sport) VALUES ('"
-            . $x->getId() .  "','"  . $x->getIdEtu() . "','"  . $x->getSport() . "');";
+        $request = "INSERT INTO formulaire (id_form,id_etu,sport,frequence) VALUES ('"
+            . $x->getId() .  "','"  . $x->getIdEtu() . "','"  . $x->getSport() . "',".$x->getBpm().");";
         try {
             $cnx = Connection::getInstance();
             return $cnx->exec($request);
