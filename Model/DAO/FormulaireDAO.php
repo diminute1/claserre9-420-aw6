@@ -103,7 +103,8 @@ class FormulaireDAO
     {
         $request = "UPDATE formulaire SET sport = '" . $x->getSport() . "', type = '" . $x->getType() .
             "', bpm = " . $x->getBpm() . ", note = " . $x->getNote() . ", frequence = " . $x->getFrequence() . ""
-                . ",comment = '" . $x->getCom() . "'" .
+                . ",comment = '" . $x->getCom() . "'"
+                . ",remise = '" . $x->getRemise() . "'" .
             " WHERE id_form = '" . $x->getId() . "'";
 
         try {
