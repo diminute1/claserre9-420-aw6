@@ -103,10 +103,60 @@ $form = $data;
         <input id="frequence" class="formuElement" onchange="save()" type="number" min="1" max="7" style="width: 3em;">
         <br />
         <hr />
-        <button class="btn btn-primary" type="submit">Remettre</button>
+        <button type="button" class="btn btn-primary" onclick="document.getElementById('id_form_remise').value='<?=$form->getId()?>'" data-toggle="modal" data-target="#remettreFormulaire">
+            Remettre
+        </button>
         <br><br>
         <hr>
     </form>
+</div>
+<!-- The Modal -->
+<div class="modal modal fade" id="remettreFormulaire">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Remettre un Formulaire</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <form class="form" action="?action=RemettreForm" method="post" style="text-align:center" style="margin-left: 20%;margin-right: 20%">
+                <input type="hidden" name="form" id="id_form_remise">
+                  <?php
+                  $etu=EtudiantService::trouver($_SESSION['connected']);
+                  $remises=RemiseService::trouverParGroupe($etu->getIdGroupe());
+                  if(count($remises)<=0){
+                    echo "Aucune Remise";
+                  }else{
+                    ?>
+                    <select name="remise">
+                    <?php
+                  foreach($remises as $remise){
+                  ?>
+                  <option value="<?php echo $remise->getId();?>"><?php echo $remise->getDate();?></option>
+                  <?php
+                }?>
+                </select>
+                <?php
+              }
+                    ?>
+
+                  <hr />
+                  <button class="btn btn-primary" type="submit">Remettre Formulaire</button>
+                  <br><br>
+                  <hr>
+              </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
 </div>
 <script>
     //    document.getElementsByClassName('formuElement').onchange = function () {

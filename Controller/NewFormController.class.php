@@ -31,7 +31,11 @@ class NewFormController implements IAction
         $new->setSport('Nouveau');
         FormulaireService::creer($new);
         $f = FormulaireService::trouver($new->getId());
-        if ($f == null) return new Page('etuconnected', "Accueil", null, null);
-        return new Page('form_etu', 'Formulaire', $f, null);
+        if ($f != null) return new Page('form_etu', 'Formulaire', $f, null);
+
+        $etu=EtudiantService::trouver($_SESSION['connected']);
+        $data=RemiseService::trouverParGroupe($etu->getIdGroupe());
+        return new Page('etuconnected', "Accueil", $data, null);
+
     }
 }

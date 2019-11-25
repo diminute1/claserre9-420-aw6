@@ -15,7 +15,9 @@ class AccueilController implements IAction
             return new Page('accueil', "Accueil", null, null);
         }
         if (EtudiantService::trouver($_SESSION['connected'])) {
-            return new Page('etuconnected', "Accueil", null, null);
+            $etu=EtudiantService::trouver($_SESSION['connected']);
+            $data=RemiseService::trouverParGroupe($etu->getIdGroupe());
+            return new Page('etuconnected', "Accueil", $data, null);
         }
         $data = GroupeService::trouverParProf($_SESSION['connected']);
         return new Page('profilprof', "Mon profil", $data, null);

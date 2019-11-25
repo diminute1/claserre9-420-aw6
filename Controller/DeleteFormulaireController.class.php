@@ -18,7 +18,9 @@ class DeleteFormulaireController implements IAction
 			if(isset($_REQUEST['form'])){
 				FormulaireDAO::delete($_REQUEST['form']);
 			}
-			return new Page('etuconnected', "Accueil", null, null);
+      $etu=EtudiantService::trouver($_SESSION['connected']);
+      $data=RemiseService::trouverParGroupe($etu->getIdGroupe());
+      return new Page('etuconnected', "Accueil", $data, null);
 		}
 		$data = GroupeDAO::find($_SESSION['connected']);
         return new Page('profilprof', "Mon profil", $data, null);

@@ -19,9 +19,9 @@ foreach ($list as $form) {
 	<td align='right'><a class='btn btn-danger fa fa-trash' href='?action=deleteFormulaire&form=<?=$form->getId()?>'></a></td>
     </tr>
 <?php }
-echo '<tr>';
-echo '<td><a href="?action=newForm" class="btn btn-block"><span class="fa fa-plus"></span> </a></td>';
-echo '</tr>';
+//echo '<tr>';
+//echo '<td><a href="?action=newForm" class="btn btn-block"><span class="fa fa-plus"></span> </a></td>';
+//echo '</tr>';
 echo '</table>';
 ?>
 </div>
