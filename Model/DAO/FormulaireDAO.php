@@ -17,8 +17,8 @@ class FormulaireDAO
 {
     public static function Create($x)
     {
-        $request = "INSERT INTO formulaire (id_form,id_etu,sport) VALUES ('"
-            . $x->getId() .  "','"  . $x->getIdEtu() . "','"  . $x->getSport() . "');";
+        $request = "INSERT INTO formulaire (id_form,id_etu,sport,frequence) VALUES ('"
+            . $x->getId() .  "','"  . $x->getIdEtu() . "','"  . $x->getSport() . "',".$x->getBpm().");";
         try {
             $cnx = Connection::getInstance();
             return $cnx->exec($request);
@@ -103,7 +103,8 @@ class FormulaireDAO
     {
         $request = "UPDATE formulaire SET sport = '" . $x->getSport() . "', type = '" . $x->getType() .
             "', bpm = " . $x->getBpm() . ", note = " . $x->getNote() . ", frequence = " . $x->getFrequence() . ""
-                . ",comment = '" . $x->getCom() . "'" .
+                . ",comment = '" . $x->getCom() . "'"
+                . ",remise = '" . $x->getRemise() . "'" .
             " WHERE id_form = '" . $x->getId() . "'";
 
         try {

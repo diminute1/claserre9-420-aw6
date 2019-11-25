@@ -13,10 +13,10 @@
  */
 class Formulaire {
 
-    private $id = "", $sport = "", $id_etu = "", $bpm = 60, $note = 0, $type = "", $frequence = 0, $com;
+    private $id = "", $sport = "", $id_etu = "", $bpm = 60, $note = 0, $type = "", $frequence = 0, $com,$remise="";
 
     public function __construct() {
-        
+
     }
 
     public function setId($param) {
@@ -59,6 +59,14 @@ class Formulaire {
         return $this->bpm;
     }
 
+    public function setRemise($param) {
+        $this->remise = $param;
+    }
+
+    public function getRemise() {
+        return $this->remise;
+    }
+
     public function setNote($param) {
         $this->note = $param;
     }
@@ -95,7 +103,8 @@ class Formulaire {
         $this->note = $tab["note"];
         $this->type = $tab["type"];
         $this->frequence = $tab["frequence"];
-        //$this->com = $tab["comment"];
+        $this->com = $tab["comment"];
+        $this->remise=$tab["remise"];
     }
 
 }

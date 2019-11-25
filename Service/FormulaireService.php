@@ -24,7 +24,15 @@ class FormulaireService {
     }
     public static function modifier($formulaire){
         return FormulaireDAO::update($formulaire);
-        
     }
-    
+    public static function remis($remise,$etu){
+      $forms=FormulaireService::trouverParEtudiant($etu->getId());
+      foreach($forms as $form){
+        if($form->getRemise()==$remise->getId()){
+          return true;
+        }
+      }
+      return false;
+    }
+
 }
