@@ -23,7 +23,6 @@
                     <a href="?action=supprimergroupe&id=<?= $p->get_id_groupe() ?>" class="btn btn-danger text-white" role="button"><i class="fas fa-trash"></i></a>
                 </span>
             </li>
-
         <?php } ?>
     </ul>
 </div>
