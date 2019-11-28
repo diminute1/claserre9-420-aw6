@@ -28,7 +28,9 @@ class ConnexionetuController implements IAction
                 return new Page('accueil', "Accueil", null, null);
             }
         }
-        return new Page('etuconnected', "Accueil", null, null);
+        $etu=EtudiantService::trouver($_SESSION['connected']);
+        $data=RemiseService::trouverParGroupe($etu->getIdGroupe());
+        return new Page('etuconnected', "Accueil", $data, null);
     }
 
     private function invalide()
