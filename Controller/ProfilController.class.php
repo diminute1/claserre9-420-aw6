@@ -12,6 +12,9 @@ class ProfilController implements IAction
 		if (!isset($_SESSION["connected"])) {
 			return new Page('accueil', "Accueil", null, null);
 		}
-		return new Page('profiletu', "Mon profil", null, null);
+		if (isset($_SESSION['type_utilisateur']) && $_SESSION['type_utilisateur'] == 'etudiant') {
+			$etu = EtudiantService::trouver($_SESSION['connected']);
+		}
+		return new Page('profiletu', "Mon profil", $etu, null);
 	}
 }

@@ -9,6 +9,10 @@ class ConnexionetuController implements IAction
 
     public function execute()
     {
+        if (isset($_SESSION['connected'])) {
+            $etu = EtudiantService::trouver($_SESSION['connected']);
+            return new Page('etuconnected', "Accueil", null, null);
+        }
         if (!isset($_SESSION)) {
             session_start();
         }
@@ -17,7 +21,7 @@ class ConnexionetuController implements IAction
         }
         if (isset($_POST["da"]) && isset($_POST["mdp"])) {
             $etu = EtudiantService::trouver($_POST['da']);
-            if ($etu != null && password_verify($_POST['mdp'],$etu->getMdp())) {
+            if ($etu != null && password_verify($_POST['mdp'], $etu->getMdp())) {
                 $_SESSION['connected'] = $etu->getId();
                 $_SESSION['type_utilisateur'] = "etudiant";
             } else {

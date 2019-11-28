@@ -1,7 +1,3 @@
-<!--<p>Je suis connecté</p>-->
-<?php //require_once './Model/DAO/groupeDAO.php';
-?>
-
 <div class="d-flex flex-row-reverse mx-5 my-5">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#creergroupe">
         Creer un groupe d'étudiants
