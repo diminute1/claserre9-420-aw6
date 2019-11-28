@@ -1,96 +1,171 @@
 .loginetudiant {
-    padding: 80px 0
+  padding: 80px 0
 }
 
 /* ok */
 .loginetudiant .form-container {
-    display: table;
-    max-width: 900px;
-    width: 90%;
-    margin: 0 auto;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, .1)
+  display: table;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .1)
 }
 
 /* ok */
 .loginetudiant form {
-    display: table-cell;
-    width: 400px;
-   
-    padding: 40px 60px;
-   
+  display: table-cell;
+  width: 400px;
+
+  padding: 40px 60px;
+
 }
 
 .loginetudiant form .form-check {
-    font-size: 13px;
-    line-height: 20px
+  font-size: 13px;
+  line-height: 20px
 }
 
 .equipe {
-    color: #313437;
-    /*background-color: #eef4f7;*/
+  color: #313437;
+  /*background-color: #eef4f7;*/
+}
+
+.equipe p {
+  color: #7d8285;
+}
+
+
+@media (max-width:767px) {
+  .equipe h2 {
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-size: 24px;
   }
-  
-  .equipe p {
-    color: #7d8285;
-  }
-  
-  
-  @media (max-width:767px) {
-    .equipe h2 {
-      margin-bottom: 25px;
-      padding-top: 25px;
-      font-size: 24px;
-    }
-  }
-  
-  .equipe .intro {
-    font-size: 16px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .equipe .intro p {
-    margin-bottom: 0;
-  }
-  
-  .equipe .people {
-    padding: 50px 0;
-  }
-  
-  .equipe .item {
-    text-align: center;
-  }
-  
-  .equipe .item .box {
-    text-align: center;
-    padding: 30px;
-    background-color: #fff;
-    margin-bottom: 30px;
-  }
-  
-  .equipe .item .name {
-    font-weight: bold;
-    margin-top: 28px;
-    margin-bottom: 8px;
-    color: inherit;
-  }
-  
-  .equipe .item .title {
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #d0d0d0;
-    letter-spacing: 2px;
-    font-size: 13px;
-  }
-  
-  .equipe .item .description {
-    font-size: 15px;
-    margin-top: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .equipe .item img {
-    max-width: 160px;
-  }
-  
-  
+}
+
+.equipe .intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.equipe .intro p {
+  margin-bottom: 0;
+}
+
+.equipe .people {
+  padding: 50px 0;
+}
+
+.equipe .item {
+  text-align: center;
+}
+
+.equipe .item .box {
+  text-align: center;
+  padding: 30px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+.equipe .item .name {
+  font-weight: bold;
+  margin-top: 28px;
+  margin-bottom: 8px;
+  color: inherit;
+}
+
+.equipe .item .title {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #d0d0d0;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.equipe .item .description {
+  font-size: 15px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.equipe .item img {
+  max-width: 160px;
+}
+
+/*CSS pour le profil individuel pour l'etudiant*/
+.form-btn,
+img.avart-img {
+  max-width: 200px
+}
+
+div.avatar>img {
+  border-radius: 50%
+}
+
+.no-marging {
+  margin: 0 !important
+}
+
+.alert-col>.alert.display {
+  opacity: 1
+}
+
+div.container.profile {
+  padding: 10px 20px
+}
+
+.center {
+  text-align: center
+}
+
+.relative {
+  position: relative
+}
+
+.absolue {
+  position: absolute
+}
+
+div.profile-row {
+  margin-top: 55px
+}
+
+.absolue.center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 0)
+}
+
+div.alert {
+  width: 40%
+}
+
+.alert-col>.alert {
+  padding: 10px;
+  border-radius: 0;
+  transition: all .5s ease;
+  opacity: 0
+}
+
+hr {
+  height: 2px
+}
+
+.content-right>* {
+  float: right
+}
+
+.form-btn {
+  min-width: 100px;
+  margin: 0 5px
+}
+
+div.avatar-bg {
+  background: url(https://www.gravatar.com/avatar/1234566?size=200&d=mm) 50% 50%;
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  border-radius: 50%;
+  margin-left: calc(50% - 100px)
+}
