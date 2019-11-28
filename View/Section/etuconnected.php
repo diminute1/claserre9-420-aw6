@@ -5,7 +5,7 @@
     <nav>
       <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active" id="nav-etu-form-tab" data-toggle="tab" href="#nav-etu-form" role="tab" aria-controls="nav-etu" aria-selected="true">Les formulaires</a>
-        <a class="nav-item nav-link" id="nav-et-remise-tab" data-toggle="tab" href="#nav-etu-remise" role="tab" aria-controls="nav-remise" aria-selected="false">Remises</a>
+        <a class="nav-item nav-link" id="nav-etu-remise-tab" data-toggle="tab" href="#nav-etu-remise" role="tab" aria-controls="nav-remise" aria-selected="false">Remises</a>
       </div>
     </nav>
 

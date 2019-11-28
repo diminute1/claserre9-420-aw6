@@ -14,7 +14,8 @@ class RemettreFormController implements IAction
 		{
 			return new Page('accueil', "Accueil", null, null);
 		}
-
+    $form=FormulaireService::trouver($_SESSION['formulaire']);
+    $remiseform=RemiseFormulaireService::trouver
     $etu=EtudiantService::trouver($_SESSION['connected']);
     $data=RemiseService::trouverParGroupe($etu->getIdGroupe());
     return new Page('etuconnected', "Accueil", $data, null);
