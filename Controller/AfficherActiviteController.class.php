@@ -11,11 +11,12 @@
  *
  * @author estes
  */
-class AfficherActiviteController implements IAction {
+class AfficherActiviteController implements IAction
+{
     //put your code here
-    public function execute() {
-        $etu= EtudiantService::trouver($_REQUEST['id']);
-        return new Page('liste_activites','Activites',$etu,null);
+    public function execute()
+    {
+        $etu = EtudiantService::trouver($_REQUEST['id']);
+        return new Page('liste_activites', 'Activites', $etu, null);
     }
-
 }

@@ -12,13 +12,13 @@
                     <hr>
                     <div class="form-row">
                         <div class="col-sm-12 col-md-6">
-                            <div class="form-group"><label>Prénom</label><input class="form-control" type="text" name="prenom_etu" disabled=""></div>
+                            <div class="form-group"><label>Prénom</label><input class="form-control" type="text" name="prenom_etu" disabled="" placeholder="<?= $data->getPrenom(); ?>"></div>
                         </div>
                         <div class="col-sm-12 col-md-6">
-                            <div class="form-group"><label>Nom</label><input class="form-control" type="text" name="nom_etu" disabled=""></div>
+                            <div class="form-group"><label>Nom</label><input class="form-control" type="text" name="nom_etu" disabled="" placeholder="<?= $data->getNom(); ?>"></div>
                         </div>
                     </div>
-                    <div class="form-group"><label>Numéro d'admission</label><input class="form-control" type="text" autocomplete="off" required="" name="email" disabled=""></div>
+                    <div class="form-group"><label>Numéro d'admission</label><input class="form-control" type="text" autocomplete="off" required="" name="da" disabled="" placeholder="<?= $data->getID(); ?>"></div>
                     <div class="form-row">
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group"><label>Taille</label><input class="form-control" type="text" name="taille_etu" autocomplete="off" <?php if ($invalide) echo 'disabled=""' ?>></div>
