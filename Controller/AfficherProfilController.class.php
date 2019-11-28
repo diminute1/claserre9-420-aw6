@@ -6,7 +6,7 @@ class AfficherProfilController implements IAction
 {
     public function execute()
     {
-        $etu = EtudiantService::trouver($_REQUEST['id']);
-        return new Page('liste_activites', "Profil de l'étudiant", $etu, null);
+        //$etu = EtudiantService::trouver($_REQUEST['id']);
+        return new Page('profiletu', "Profil de l'étudiant", null, null);
     }
 }
